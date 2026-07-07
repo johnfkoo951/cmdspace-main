@@ -7,7 +7,7 @@
 #   ./scripts/build-gallery.sh /path/to/new-photos  # also import new photos from source
 #
 # - Accepts .jpg .jpeg .png .heic (converted to JPG)
-# - Resizes max dim to 1800px, quality 84 (progressive JPEG)
+# - Resizes max dim to 1200px, quality 80 (progressive JPEG)
 # - Preserves EXIF rotation
 # - Generates sequential filenames: photo-NN.jpg
 
@@ -28,8 +28,8 @@ GALLERY = "$GALLERY"
 MANIFEST = "$MANIFEST"
 SRC = "$SRC"
 EXTS = ("jpg", "jpeg", "JPG", "JPEG", "png", "PNG", "heic", "HEIC")
-MAX_DIM = 1800
-QUALITY = 84
+MAX_DIM = 1200
+QUALITY = 80
 
 # 1. Optionally import new files from SRC into GALLERY (preserve originals there)
 if SRC and os.path.isdir(SRC):

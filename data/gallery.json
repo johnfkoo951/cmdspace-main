@@ -7,8 +7,8 @@
   },
   {
     "src": "/assets/gallery/photo-02.jpg",
-    "w": 1800,
-    "h": 1202,
+    "w": 1200,
+    "h": 801,
     "caption": ""
   },
   {
@@ -25,14 +25,14 @@
   },
   {
     "src": "/assets/gallery/photo-05.jpg",
-    "w": 1013,
-    "h": 1800,
+    "w": 675,
+    "h": 1200,
     "caption": ""
   },
   {
     "src": "/assets/gallery/photo-06.jpg",
-    "w": 1800,
-    "h": 1200,
+    "w": 1200,
+    "h": 800,
     "caption": ""
   },
   {
@@ -43,8 +43,8 @@
   },
   {
     "src": "/assets/gallery/photo-08.jpg",
-    "w": 1800,
-    "h": 1242,
+    "w": 1200,
+    "h": 828,
     "caption": ""
   },
   {
@@ -61,14 +61,14 @@
   },
   {
     "src": "/assets/gallery/photo-11.jpg",
-    "w": 1350,
-    "h": 1800,
+    "w": 900,
+    "h": 1200,
     "caption": ""
   },
   {
     "src": "/assets/gallery/photo-12.jpg",
-    "w": 1800,
-    "h": 1350,
+    "w": 1200,
+    "h": 900,
     "caption": ""
   },
   {
@@ -79,8 +79,8 @@
   },
   {
     "src": "/assets/gallery/photo-14.jpg",
-    "w": 1800,
-    "h": 1350,
+    "w": 1200,
+    "h": 900,
     "caption": ""
   },
   {
@@ -97,14 +97,14 @@
   },
   {
     "src": "/assets/gallery/photo-17.jpg",
-    "w": 1350,
-    "h": 1800,
+    "w": 900,
+    "h": 1200,
     "caption": ""
   },
   {
     "src": "/assets/gallery/photo-18.jpg",
-    "w": 1800,
-    "h": 1202,
+    "w": 1200,
+    "h": 801,
     "caption": ""
   },
   {

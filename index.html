@@ -39,8 +39,16 @@
 <meta name="twitter:image" content="https://cmdspace.work/assets/og/og-landing.png" />
 <meta name="twitter:image:alt" content="CMDSPACE 랜딩" />
 
-<!-- Pretendard -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+<!-- Canonical + theme color -->
+<link rel="canonical" href="https://cmdspace.work/" />
+<meta name="theme-color" content="#fbfbfa" media="(prefers-color-scheme: light)" />
+<meta name="theme-color" content="#06080a" media="(prefers-color-scheme: dark)" />
+
+<!-- Pretendard (dynamic subset, non-blocking) -->
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+<link rel="preload" as="style" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" media="print" onload="this.media='all'" />
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" /></noscript>
 
 <style>
 :root {
@@ -55,8 +63,8 @@
 	--cmds-pink-light: #F4A4B8;
 	--cmds-pink-dark: #D16C8A;
 
-	--font-sans: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Pretendard', 'Helvetica Neue', Arial, sans-serif;
-	--font-display: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Pretendard', sans-serif;
+	--font-sans: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Pretendard Variable', 'Pretendard', 'Helvetica Neue', Arial, sans-serif;
+	--font-display: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Pretendard Variable', 'Pretendard', sans-serif;
 	--font-mono: ui-monospace, 'SF Mono', 'Menlo', 'JetBrains Mono', Consolas, monospace;
 
 	--bg: #fbfbfa;
@@ -64,10 +72,11 @@
 	--bg-soft: #f4f5f3;
 	--fg: #0a0d0b;
 	--fg-muted: #4a544f;
-	--fg-subtle: #8a938e;
+	--fg-subtle: #69726d;
 	--border: #e6e8e6;
 	--border-strong: #cfd3d0;
 	--accent: var(--cmds-green);
+	--accent-on: #ffffff;
 	--accent-soft: var(--cmds-green-50);
 	--accent-mid: var(--cmds-green-100);
 }
@@ -78,10 +87,11 @@
 	--bg-soft: #0a1210;
 	--fg: #f2f4f3;
 	--fg-muted: #9aa39d;
-	--fg-subtle: #626a66;
+	--fg-subtle: #7f8883;
 	--border: #1a231f;
 	--border-strong: #263029;
 	--accent: var(--cmds-pink);
+	--accent-on: #1B1B1B;
 	--accent-soft: #2b1922;
 	--accent-mid: #3a2430;
 }
@@ -185,8 +195,7 @@ h1 .cmd { font-family: var(--font-mono); font-weight: 600; }
 	transition: transform 0.1s, box-shadow 0.15s, background 0.15s;
 	border: 1px solid transparent;
 }
-.btn-primary { background: var(--accent); color: #fff; }
-[data-theme="dark"] .btn-primary { color: #0a0d0b; }
+.btn-primary { background: var(--accent); color: var(--accent-on); }
 .btn-primary:hover { background: var(--cmds-green-hover); }
 [data-theme="dark"] .btn-primary:hover { background: var(--cmds-pink-light); }
 .btn-ghost { background: transparent; border-color: var(--border-strong); color: var(--fg); }
@@ -299,7 +308,7 @@ section { padding: 88px 0; border-bottom: 1px solid var(--border); }
 }
 .about-avatar {
 	width: 140px; height: 140px; border-radius: 50%;
-	display: grid; place-items: center; color: #fff;
+	display: grid; place-items: center; color: var(--accent-on);
 	font-family: var(--font-display); font-size: 42px; font-weight: 700;
 	letter-spacing: -0.02em;
 	background: linear-gradient(135deg, var(--cmds-green-bright), var(--cmds-green));
@@ -312,7 +321,7 @@ section { padding: 88px 0; border-bottom: 1px solid var(--border); }
 	display: block;
 }
 [data-theme="dark"] .about-avatar-photo { box-shadow: 0 4px 18px rgba(233,133,162,0.2); }
-[data-theme="dark"] .about-avatar:not(.about-avatar-photo) { background: linear-gradient(135deg, var(--cmds-pink-light), var(--cmds-pink-dark)); color: #06080a; }
+[data-theme="dark"] .about-avatar:not(.about-avatar-photo) { background: linear-gradient(135deg, var(--cmds-pink-light), var(--cmds-pink-dark)); }
 .profile-photos { margin-top: 24px; }
 .profile-thumbs {
 	display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; margin-top: 12px;
@@ -338,6 +347,13 @@ section { padding: 88px 0; border-bottom: 1px solid var(--border); }
 }
 .contact-line a { color: var(--accent); font-weight: 500; font-family: var(--font-mono); }
 .contact-line a:hover { text-decoration: underline; }
+.contact-line a.btn-bio {
+	margin-left: auto;
+	padding: 8px 14px; border-radius: 9px;
+	font-family: var(--font-sans); font-size: 13px; font-weight: 600;
+	color: var(--fg);
+}
+.contact-line a.btn-bio:hover { text-decoration: none; }
 
 /* Topics grid */
 .topics-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
@@ -390,7 +406,9 @@ section { padding: 88px 0; border-bottom: 1px solid var(--border); }
 	position: relative;
 	border: 1px solid var(--border);
 	transition: transform 0.2s;
+	padding: 0; display: block; width: 100%; height: 100%;
 }
+.gallery-item:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .gallery-item:hover { transform: translateY(-2px); border-color: var(--accent); }
 .gallery-item.tall { grid-row: span 2; }
 .gallery-item.wide { grid-column: span 2; }
@@ -497,8 +515,7 @@ section { padding: 88px 0; border-bottom: 1px solid var(--border); }
 	font-family: var(--font-mono);
 }
 .chip:hover { border-color: var(--border-strong); color: var(--fg); }
-.chip.active { background: var(--accent); border-color: var(--accent); color: #fff; }
-[data-theme="dark"] .chip.active { color: #06080a; }
+.chip.active { background: var(--accent); border-color: var(--accent); color: var(--accent-on); }
 .search-box {
 	width: 100%;
 	padding: 10px 14px;
@@ -615,10 +632,9 @@ td .type-tag { display: inline-block; font-family: var(--font-mono); font-size: 
 	letter-spacing: 0.05em;
 	padding: 2px 6px;
 	background: var(--accent);
-	color: #fff;
+	color: var(--accent-on);
 	border-radius: 3px;
 }
-[data-theme="dark"] .btn-pdf .pdf-icon { color: #06080a; }
 
 /* Subdomain hub */
 .hub-group { margin-bottom: 36px; }
@@ -732,7 +748,6 @@ footer .wrap { display: grid; grid-template-columns: 1fr auto; gap: 40px; align-
 <!-- HERO -->
 <section class="hero" id="top" style="border-top: none;">
 	<div class="wrap">
-		<div class="eyebrow reveal"><span class="dot"></span>CMDSPACE · 커맨드스페이스</div>
 		<h1 class="reveal">명령이 일어나는 <br />공간, <span class="cmd accent-word">⌘ + Space</span>.</h1>
 		<p class="hero-lead reveal">
 			커맨드스페이스는 맥OS 스팟라이트 단축키 <span class="cmd">⌘ + Space</span>에서 이름을 가져온 <span class="accent-word">지식관리 브랜드</span>입니다.
@@ -750,6 +765,10 @@ footer .wrap { display: grid; grid-template-columns: 1fr auto; gap: 40px; align-
 			</a>
 			<a class="btn btn-ghost" href="#headlines">교육 이력 보기</a>
 			<a class="btn btn-ghost" href="#hub">서비스 허브 →</a>
+			<a class="btn btn-ghost" href="https://bio.cmdspace.work" target="_blank" rel="noopener">
+				구요한 Bio
+				<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+			</a>
 			<a class="btn-pdf" href="/assets/downloads/cmdspace-brochure.pdf" download>
 				<span class="pdf-icon">PDF</span>
 				소개자료 다운로드
@@ -847,7 +866,7 @@ footer .wrap { display: grid; grid-template-columns: 1fr auto; gap: 40px; align-
 			<div class="topic-card reveal">
 				<div class="topic-num">08</div>
 				<h3>노코드·자동화</h3>
-				<p>n8n 워크플로우로 일상 자동화, Google Sheet + GPT API 연동, 교육·HR·마케팅 자동화 설계. 코드 없이 일하는 방식을 바꾸는 레시피. ---</p>
+				<p>n8n 워크플로우로 일상 자동화, Google Sheet + GPT API 연동, 교육·HR·마케팅 자동화 설계. 코드 없이 일하는 방식을 바꾸는 레시피.</p>
 				<div class="topic-audience">→ 실무자 · 교육자 · 기획자</div>
 			</div>
 		</div>
@@ -1004,6 +1023,10 @@ footer .wrap { display: grid; grid-template-columns: 1fr auto; gap: 40px; align-
 				<div class="contact-line">
 					<span class="contact-label">개인 연락</span>
 					<a href="mailto:johnfkoo951@gmail.com">johnfkoo951@gmail.com</a>
+					<a class="btn btn-ghost btn-bio" href="https://bio.cmdspace.work" target="_blank" rel="noopener">
+						Bio · 모든 링크 보기
+						<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+					</a>
 				</div>
 			</div>
 		</div>
@@ -1025,7 +1048,7 @@ footer .wrap { display: grid; grid-template-columns: 1fr auto; gap: 40px; align-
 </section>
 
 <!-- Lightbox -->
-<div class="lightbox" id="lightbox" aria-hidden="true">
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="사진 크게 보기" aria-hidden="true">
 	<button class="lb-close" id="lb-close" aria-label="닫기">×</button>
 	<button class="lb-nav lb-prev" id="lb-prev" aria-label="이전">‹</button>
 	<img id="lb-img" src="" alt="" />
@@ -1063,7 +1086,7 @@ footer .wrap { display: grid; grid-template-columns: 1fr auto; gap: 40px; align-
 			</div>
 			<div class="filter-block">
 				<div class="filter-label">검색</div>
-				<input class="search-box" id="search-input" placeholder="제목 · 기관 · 키워드…" />
+				<input class="search-box" id="search-input" aria-label="이력 검색 — 제목·기관·키워드" placeholder="제목 · 기관 · 키워드…" />
 			</div>
 		</div>
 		<div class="filter-result-row">
@@ -1385,7 +1408,7 @@ footer .wrap { display: grid; grid-template-columns: 1fr auto; gap: 40px; align-
 		</div>
 		<div class="foot-meta">
 			<div>cmdspace.work</div>
-			<div>Last updated: <span id="last-updated">—</span></div>
+			<div>Latest activity: <span id="last-updated">—</span></div>
 			<div>Records: <span id="foot-count">—</span></div>
 			<div>© 2026 CMDSPACE</div>
 		</div>
@@ -1462,15 +1485,31 @@ let visible = 50;
 const filters = { year: 'all', topic: 'all', type: 'all', q: '' };
 
 fetch('/data/activities.csv', { cache: 'no-store' })
-	.then(r => r.text())
+	.then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.text(); })
 	.then(text => {
-		ALL = parseCSV(text);
+		const today = new Date().toISOString().slice(0, 10);
+		ALL = parseCSV(text).filter(r => !r.start_at || r.start_at.slice(0, 10) <= today);
 		renderAll();
 	})
 	.catch(err => {
 		console.error('CSV load failed', err);
-		document.getElementById('history-body').innerHTML = '<tr><td colspan="5" style="padding:40px;text-align:center;color:var(--fg-subtle);">이력 데이터를 불러올 수 없습니다.</td></tr>';
+		renderDataError();
 	});
+
+function renderDataError() {
+	const msg = '이력 데이터를 불러올 수 없습니다.';
+	document.getElementById('history-body').innerHTML = `<tr><td colspan="5" style="padding:40px;text-align:center;color:var(--fg-subtle);">${msg}</td></tr>`;
+	['year-bars', 'topic-list', 'host-list'].forEach(id => {
+		const el = document.getElementById(id);
+		if (el) el.innerHTML = `<div style="padding:16px 0;color:var(--fg-subtle);font-size:13px;">${msg}</div>`;
+	});
+	const rc = document.getElementById('result-count');
+	if (rc) rc.textContent = msg;
+	const fs = document.querySelector('.filter-stack');
+	if (fs) fs.style.display = 'none';
+	const lm = document.getElementById('load-more');
+	if (lm) lm.style.display = 'none';
+}
 
 function renderAll() {
 	// Hero stats
@@ -1501,7 +1540,7 @@ function renderAll() {
 	const maxY = Math.max(...Object.values(byYear));
 	document.getElementById('year-bars').innerHTML = years.map(y => `
 		<div class="year-row">
-			<span class="year">${y}</span>
+			<span class="year">${escape(y)}</span>
 			<div class="bar-bg"><div class="bar-fill" data-w="${(byYear[y]/maxY*100).toFixed(1)}%"></div></div>
 			<span class="count">${byYear[y]}</span>
 		</div>
@@ -1513,19 +1552,19 @@ function renderAll() {
 	ALL.forEach(r => (r.topic || '').split(',').forEach(t => { t = t.trim(); if (t) byTopic[t] = (byTopic[t] || 0) + 1; }));
 	const topicSorted = Object.entries(byTopic).sort((a,b) => b[1] - a[1]);
 	document.getElementById('topic-list').innerHTML = topicSorted.map(([t, c]) =>
-		`<div class="topic-row"><span class="name">${t}</span><span class="count-pill">${c}</span></div>`).join('');
+		`<div class="topic-row"><span class="name">${escape(t)}</span><span class="count-pill">${c}</span></div>`).join('');
 
 	// Top hosts
 	const byHost = {};
 	ALL.forEach(r => (r.host || '').split(',').forEach(h => { h = h.trim(); if (h) byHost[h] = (byHost[h] || 0) + 1; }));
 	const hostTop = Object.entries(byHost).sort((a,b) => b[1] - a[1]).slice(0, 12);
 	document.getElementById('host-list').innerHTML = hostTop.map(([h, c]) =>
-		`<div class="host-row"><span class="host-name">${h}</span><span class="host-count">${c}건</span></div>`).join('');
+		`<div class="host-row"><span class="host-name">${escape(h)}</span><span class="host-count">${c}건</span></div>`).join('');
 
 	// Filter chips
 	const yearChips = ['all', ...years.slice().reverse()];
 	document.getElementById('filter-years').innerHTML = yearChips.map(y =>
-		`<button class="chip ${y==='all'?'active':''}" data-year="${y}">${y==='all'?'전체':y}</button>`).join('');
+		`<button class="chip ${y==='all'?'active':''}" data-year="${escape(y)}">${y==='all'?'전체':escape(y)}</button>`).join('');
 	document.getElementById('filter-years').addEventListener('click', e => {
 		if (!e.target.dataset.year) return;
 		filters.year = e.target.dataset.year;
@@ -1534,7 +1573,7 @@ function renderAll() {
 	});
 	const topicChips = ['all', ...topicSorted.map(([t]) => t)];
 	document.getElementById('filter-topics').innerHTML = topicChips.map(t =>
-		`<button class="chip ${t==='all'?'active':''}" data-topic="${t}">${t==='all'?'전체':t}</button>`).join('');
+		`<button class="chip ${t==='all'?'active':''}" data-topic="${escape(t)}">${t==='all'?'전체':escape(t)}</button>`).join('');
 	document.getElementById('filter-topics').addEventListener('click', e => {
 		if (!e.target.dataset.topic) return;
 		filters.topic = e.target.dataset.topic;
@@ -1548,7 +1587,7 @@ function renderAll() {
 	const typeSorted = Object.entries(byType).sort((a,b) => b[1] - a[1]);
 	const typeChips = ['all', ...typeSorted.map(([t]) => t)];
 	document.getElementById('filter-types').innerHTML = typeChips.map(t =>
-		`<button class="chip ${t==='all'?'active':''}" data-type="${t}">${t==='all'?'전체':t}</button>`).join('');
+		`<button class="chip ${t==='all'?'active':''}" data-type="${escape(t)}">${t==='all'?'전체':escape(t)}</button>`).join('');
 	document.getElementById('filter-types').addEventListener('click', e => {
 		if (!e.target.dataset.type) return;
 		filters.type = e.target.dataset.type;
@@ -1608,7 +1647,7 @@ function renderTable() {
 	} else {
 		body.innerHTML = slice.map(r => {
 			const types = (r.activity_type || '').split(',').map(t => t.trim()).filter(Boolean);
-			const typeTags = types.length ? types.map(t => `<span class="type-tag">${t}</span>`).join('') : '<span style="color:var(--fg-subtle);font-size:12px;">—</span>';
+			const typeTags = types.length ? types.map(t => `<span class="type-tag">${escape(t)}</span>`).join('') : '<span style="color:var(--fg-subtle);font-size:12px;">—</span>';
 			return `<tr>
 				<td class="title">${escape(r.display_title || '')}</td>
 				<td class="host col-host">${escape(r.host || '')}</td>
@@ -1647,9 +1686,10 @@ function renderGallery() {
 		let span = '';
 		if (ratio < 0.85) span = 'tall';
 		else if (ratio > 1.7) span = 'wide';
-		return `<div class="gallery-item ${span}" data-idx="${i}">
+		const label = g.caption ? escape(g.caption) + ' 크게 보기' : `갤러리 사진 ${i + 1} 크게 보기`;
+		return `<button type="button" class="gallery-item ${span}" data-idx="${i}" aria-label="${label}">
 			<img src="${g.src}" alt="${escape(g.caption || '')}" loading="lazy" />
-		</div>`;
+		</button>`;
 	}).join('');
 	gridEl.querySelectorAll('.gallery-item').forEach(el => {
 		el.addEventListener('click', () => openLightbox(parseInt(el.dataset.idx, 10)));
@@ -1660,20 +1700,25 @@ const lb = document.getElementById('lightbox');
 const lbImg = document.getElementById('lb-img');
 const lbCount = document.getElementById('lb-count');
 
+let lbTrigger = null;
 function openLightbox(i) {
 	if (!GALLERY.length) return;
 	lbIdx = i;
 	lbImg.src = GALLERY[i].src;
 	lbImg.alt = GALLERY[i].caption || '';
 	lbCount.textContent = `${i + 1} / ${GALLERY.length}`;
+	lbTrigger = document.activeElement;
 	lb.classList.add('open');
 	lb.setAttribute('aria-hidden', 'false');
 	document.body.style.overflow = 'hidden';
+	document.getElementById('lb-close').focus();
 }
 function closeLightbox() {
 	lb.classList.remove('open');
 	lb.setAttribute('aria-hidden', 'true');
 	document.body.style.overflow = '';
+	if (lbTrigger && document.contains(lbTrigger)) lbTrigger.focus();
+	lbTrigger = null;
 }
 function step(delta) {
 	const n = GALLERY.length;
@@ -1693,6 +1738,12 @@ document.addEventListener('keydown', e => {
 	if (e.key === 'Escape') closeLightbox();
 	else if (e.key === 'ArrowLeft') step(-1);
 	else if (e.key === 'ArrowRight') step(1);
+	else if (e.key === 'Tab') {
+		const focusables = lb.querySelectorAll('button');
+		const first = focusables[0], last = focusables[focusables.length - 1];
+		if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+		else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+	}
 });
 
 // ───── Scroll navigator (barcode) ─────

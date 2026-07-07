@@ -70,8 +70,10 @@ The build script:
 ## CSV schema (must match)
 
 ```
-UID,start_at,period,duration_hours,display_title,details,host,affiliation,topic,activity_type,is_completed
+period,host,display_title,start_at,duration_hours,affiliation,topic,activity_type
 ```
+
+> 볼트 원본 DB에는 `UID`·`details`·`is_completed` 컬럼이 더 있지만, `details` 는 PII 성격이라 공개 CSV 에서 의도적으로 제외됩니다. 위 8컬럼이 `sync-activities.sh` 가 실제로 내보내는 공개 스키마입니다. 프론트는 미래 `start_at` 행을 로드 시점에 필터링합니다.
 
 See `/Users/yohankoo/Local Obsidian_MBP/CMDSPACE_Local_MBP/70. Outputs/74. Projects/구요한 이력 DB/CMDSPACE 이력 데이터 스키마.md` for field definitions.
 
