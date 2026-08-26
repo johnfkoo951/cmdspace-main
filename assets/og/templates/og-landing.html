@@ -2,165 +2,59 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>OG Landing</title>
+<title>CMDSPACE OG</title>
 <style>
 @font-face {
-	font-family: 'Pretendard';
-	src: url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/Pretendard-Bold.otf') format('opentype');
+	font-family: "Pretendard";
+	src: url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/Pretendard-Bold.otf") format("opentype");
 	font-weight: 700;
 }
 @font-face {
-	font-family: 'Pretendard';
-	src: url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/Pretendard-Regular.otf') format('opentype');
+	font-family: "Pretendard";
+	src: url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/Pretendard-Regular.otf") format("opentype");
 	font-weight: 400;
 }
-
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
 html, body { width: 1200px; height: 630px; overflow: hidden; }
 body {
-	font-family: -apple-system, 'SF Pro Display', 'Pretendard', sans-serif;
+	font-family: "SF Pro Display", "SF Pro Text", "Pretendard", system-ui, sans-serif;
 	background: #fbfbfa;
 	color: #0a0d0b;
-	position: relative;
-	padding: 64px 72px;
-	display: flex; flex-direction: column; justify-content: space-between;
+	padding: 56px 64px 52px;
+	display: grid;
+	grid-template-rows: auto 1fr auto;
+	border-top: 14px solid #134538;
 }
-
-body::before {
-	content: '';
-	position: absolute;
-	top: -320px; right: -260px;
-	width: 960px; height: 960px;
-	background: radial-gradient(circle at center,
-		rgba(47,180,136,0.16) 0%,
-		rgba(19,69,56,0.08) 35%,
-		transparent 65%);
-	pointer-events: none;
-}
-
-.top-row {
-	display: flex; align-items: center; justify-content: space-between;
-	position: relative;
-}
-.brand {
-	display: flex; align-items: center; gap: 14px;
-	font-weight: 600; font-size: 20px;
-	letter-spacing: -0.018em;
-	color: #0a0d0b;
-}
-.brand-mark {
-	width: 48px; height: 48px;
-	border-radius: 50%;
-	object-fit: contain;
-}
-
-.tag-pill {
-	display: inline-flex; align-items: center; gap: 10px;
-	font-family: 'SF Pro Text', 'Pretendard', sans-serif;
-	font-size: 15px;
-	font-weight: 500;
-	letter-spacing: -0.005em;
-	color: #134538;
-	padding: 8px 18px;
-	background: #f1f7f4;
-	border-radius: 999px;
-	border: 1px solid rgba(19,69,56,0.15);
-}
-.tag-pill::before {
-	content: '';
-	width: 8px; height: 8px;
-	border-radius: 50%;
-	background: #134538;
-	box-shadow: 0 0 0 4px rgba(19,69,56,0.18);
-}
-
-.main { position: relative; z-index: 1; }
-.title {
-	font-family: 'SF Pro Display', 'Pretendard', sans-serif;
-	font-weight: 700;
-	font-size: 96px;
-	line-height: 1.02;
-	letter-spacing: -0.042em;
-	color: #0a0d0b;
-	margin-bottom: 28px;
-}
-.title .accent {
-	background: linear-gradient(135deg, #134538 0%, #22896a 50%, #2fb488 100%);
-	-webkit-background-clip: text;
-	background-clip: text;
-	-webkit-text-fill-color: transparent;
-}
-.title .mono {
-	font-family: ui-monospace, 'SF Mono', 'Menlo', monospace;
-	font-weight: 600;
-	font-size: 90px;
-	letter-spacing: -0.03em;
-}
-.lede {
-	font-family: 'SF Pro Text', 'Pretendard', sans-serif;
-	font-size: 22px;
-	line-height: 1.45;
-	letter-spacing: -0.01em;
-	color: #4a544f;
-	max-width: 920px;
-	font-weight: 400;
-}
-
-.bottom-row {
-	display: flex; align-items: center; justify-content: space-between;
-	position: relative;
-	z-index: 1;
-}
-.stats { display: flex; gap: 40px; }
-.stat .val {
-	font-family: 'SF Pro Display', 'Pretendard', sans-serif;
-	font-size: 28px;
-	font-weight: 700;
-	letter-spacing: -0.025em;
-	color: #0a0d0b;
-	line-height: 1;
-}
-.stat .lbl {
-	font-size: 13px;
-	color: #8a938e;
-	margin-top: 4px;
-	letter-spacing: -0.005em;
-}
-.url {
-	font-family: ui-monospace, 'SF Mono', 'Menlo', monospace;
-	font-size: 16px;
-	color: #134538;
-	font-weight: 500;
-}
+.top { display: flex; align-items: center; justify-content: space-between; }
+.brand { display: flex; align-items: center; gap: 14px; font-size: 22px; font-weight: 700; }
+.brand img { width: 48px; height: 48px; border-radius: 50%; }
+.category { color: #134538; font-size: 17px; font-weight: 700; }
+.main { align-self: center; max-width: 990px; }
+h1 { font-size: 78px; line-height: 1.06; letter-spacing: 0; margin-bottom: 22px; }
+h1 span { color: #134538; }
+.lede { max-width: 920px; color: #4a544f; font-size: 23px; line-height: 1.48; }
+.bottom { display: grid; grid-template-columns: repeat(4, 1fr) auto; gap: 0; align-items: end; border-top: 1px solid #d9ddda; padding-top: 20px; }
+.metric { min-width: 0; padding-right: 24px; }
+.metric strong { display: block; font-size: 25px; color: #0a0d0b; }
+.metric span { display: block; margin-top: 4px; color: #69726d; font-size: 13px; }
+.url { align-self: center; color: #134538; font: 600 16px "SF Mono", ui-monospace, monospace; border-bottom: 3px solid #E985A2; padding-bottom: 4px; }
 </style>
 </head>
 <body>
-<div class="top-row">
-	<div class="brand">
-		<img class="brand-mark" src="logo-round.png" alt="CMDS">
-		<span>CMDSPACE</span>
+	<div class="top">
+		<div class="brand"><img src="logo-round.png" alt=""><span>CMDSPACE</span></div>
+		<div class="category">기업 AX · Context Architecture</div>
 	</div>
-	<div class="tag-pill">커맨드스페이스 · 지식관리 브랜드</div>
-</div>
-
-<div class="main">
-	<h1 class="title">
-		명령이 일어나는 공간,<br>
-		<span class="mono accent">⌘ + Space</span>.
-	</h1>
-	<p class="lede">
-		맥의 스팟라이트 단축키에서 이름을 가져왔습니다. 옵시디언 · LLM · 에이전트를 결합해, 외부 지식 공간이 사용자를 대신해 일을 지휘하게 만듭니다.
-	</p>
-</div>
-
-<div class="bottom-row">
-	<div class="stats">
-		<div class="stat"><div class="val">429+</div><div class="lbl">교육·컨설팅</div></div>
-		<div class="stat"><div class="val">1,700h+</div><div class="lbl">누적 시간</div></div>
-		<div class="stat"><div class="val">12</div><div class="lbl">서비스</div></div>
-		<div class="stat"><div class="val">5</div><div class="lbl">년차</div></div>
+	<div class="main">
+		<h1>AI가 일하게 만드는<br><span>지식 구조.</span></h1>
+		<p class="lede">임원 교육·코칭으로 문제를 발견하고, 진단 → 부서 파일럿 → 조직 확산 → 운영체계로 연결합니다.</p>
 	</div>
-	<div class="url">cmdspace.work</div>
-</div>
+	<div class="bottom">
+		<div class="metric"><strong>855명</strong><span>그룹 임원 대상 프로그램</span></div>
+		<div class="metric"><strong>약 2,500명</strong><span>라이브 AI 시연</span></div>
+		<div class="metric"><strong>1만여</strong><span>지식 파일</span></div>
+		<div class="metric"><strong>9 / 6</strong><span>System Files / 공개</span></div>
+		<div class="url">cmdspace.work</div>
+	</div>
 </body>
 </html>

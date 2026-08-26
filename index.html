@@ -12,8 +12,10 @@
 	document.documentElement.setAttribute('data-theme', theme);
 })();
 </script>
-<title>CMDSPACE — 명령이 일어나는 공간</title>
-<meta name="description" content="커맨드스페이스는 ⌘ + Space 에서 시작된 지식관리 브랜드입니다. 구요한(Yohan Koo)이 운영하는 교육·컨설팅 이력과 cmdspace.work 생태계의 모든 서비스를 한 곳에서 만나보세요." />
+<title>CMDSPACE 커맨드스페이스 — 기업 AI 지식운영체계 · 구요한</title>
+<meta name="description" content="커맨드스페이스(CMDSPACE)는 구요한 대표가 이끄는 기업 AX·컨텍스트 아키텍처 서비스입니다. AI가 실제 업무에 정착하도록 지식·업무 흐름·사람을 함께 설계하며, 임원 교육·코칭에서 진단·파일럿·조직 확산·운영체계까지 연결합니다." />
+<meta name="author" content="구요한 (Yohan Koo)" />
+<meta name="keywords" content="커맨드스페이스, CMDSPACE, 구요한, Yohan Koo, 기업 AX, AI 지식운영체계, 컨텍스트 아키텍처, 지식관리, PKM, Obsidian" />
 
 <!-- Favicon -->
 <link rel="icon" type="image/png" href="/assets/logos/cmds-logo-round.png" />
@@ -22,22 +24,22 @@
 <!-- Open Graph -->
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="CMDSPACE" />
-<meta property="og:title" content="CMDSPACE — 명령이 일어나는 공간" />
-<meta property="og:description" content="⌘ + Space 에서 시작된 지식관리 브랜드. 구요한의 교육 이력과 cmdspace.work 생태계 허브." />
+<meta property="og:title" content="CMDSPACE — AI가 일하게 만드는 지식 구조" />
+<meta property="og:description" content="기업 AX·컨텍스트 아키텍처 전문 서비스. Discover·Diagnose·Pilot·Scale·Operate를 하나의 구매 여정으로 연결합니다." />
 <meta property="og:url" content="https://cmdspace.work" />
 <meta property="og:image" content="https://cmdspace.work/assets/og/og-landing.png" />
 <meta property="og:image:secure_url" content="https://cmdspace.work/assets/og/og-landing.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:image:alt" content="CMDSPACE 랜딩" />
+<meta property="og:image:alt" content="CMDSPACE 기업 AI 지식운영체계" />
 <meta property="og:locale" content="ko_KR" />
 <meta property="og:locale:alternate" content="en_US" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="CMDSPACE — 명령이 일어나는 공간" />
-<meta name="twitter:description" content="⌘ + Space 에서 시작된 지식관리 브랜드. 구요한의 교육 이력과 cmdspace.work 생태계 허브." />
+<meta name="twitter:title" content="CMDSPACE — AI가 일하게 만드는 지식 구조" />
+<meta name="twitter:description" content="기업 AX·컨텍스트 아키텍처 전문 서비스. 교육에서 진단·파일럿·운영체계까지 연결합니다." />
 <meta name="twitter:image" content="https://cmdspace.work/assets/og/og-landing.png" />
-<meta name="twitter:image:alt" content="CMDSPACE 랜딩" />
+<meta name="twitter:image:alt" content="CMDSPACE 기업 AI 지식운영체계" />
 
 <!-- Canonical + theme color -->
 <link rel="canonical" href="https://cmdspace.work/" />
@@ -63,8 +65,8 @@
 	--cmds-pink-light: #F4A4B8;
 	--cmds-pink-dark: #D16C8A;
 
-	--font-sans: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Pretendard Variable', 'Pretendard', 'Helvetica Neue', Arial, sans-serif;
-	--font-display: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Pretendard Variable', 'Pretendard', sans-serif;
+	--font-sans: 'SF Pro Text', 'SF Pro Display', 'Pretendard Variable', 'Pretendard', system-ui, sans-serif;
+	--font-display: 'SF Pro Display', 'Pretendard Variable', 'Pretendard', system-ui, sans-serif;
 	--font-mono: ui-monospace, 'SF Mono', 'Menlo', 'JetBrains Mono', Consolas, monospace;
 
 	--bg: #fbfbfa;
@@ -104,7 +106,7 @@ body {
 	font-family: var(--font-sans);
 	background: var(--bg);
 	color: var(--fg);
-	letter-spacing: -0.011em;
+	letter-spacing: 0;
 	font-feature-settings: 'kern', 'liga', 'calt', 'ss01';
 	line-height: 1.55;
 	-webkit-font-smoothing: antialiased;
@@ -153,14 +155,6 @@ nav a:hover { color: var(--accent); }
 	position: relative;
 	overflow: hidden;
 }
-.hero::before {
-	content: "";
-	position: absolute; inset: -20% -10% auto auto;
-	width: 480px; height: 480px;
-	background: radial-gradient(circle, color-mix(in srgb, var(--accent) 12%, transparent), transparent 70%);
-	pointer-events: none;
-	filter: blur(40px);
-}
 .eyebrow {
 	display: inline-flex; align-items: center; gap: 8px;
 	padding: 6px 12px; border-radius: 999px;
@@ -171,9 +165,9 @@ nav a:hover { color: var(--accent); }
 .eyebrow .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
 h1 {
 	font-family: var(--font-display);
-	font-size: clamp(40px, 6vw, 72px);
+	font-size: 72px;
 	line-height: 1.05;
-	letter-spacing: -0.03em;
+	letter-spacing: 0;
 	font-weight: 700;
 	margin-bottom: 20px;
 }
@@ -205,7 +199,7 @@ h1 .cmd { font-family: var(--font-mono); font-weight: 600; }
 /* Education-platform intro (cmdspace.kr) */
 .edu-note {
 	display: flex; align-items: baseline; flex-wrap: wrap; gap: 8px;
-	margin: -16px 0 28px;
+	margin: 20px 0 0;
 	max-width: 640px;
 	font-size: 15px; line-height: 1.6;
 	color: var(--fg-muted);
@@ -236,7 +230,7 @@ h1 .cmd { font-family: var(--font-mono); font-weight: 600; }
 }
 .hero-stat:last-child { border-right: none; }
 .hero-stat .label { font-size: 12px; color: var(--fg-subtle); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px; }
-.hero-stat .value { font-family: var(--font-display); font-size: 32px; font-weight: 700; letter-spacing: -0.02em; }
+.hero-stat .value { font-family: var(--font-display); font-size: 32px; font-weight: 700; letter-spacing: 0; }
 .hero-stat .unit { font-size: 14px; color: var(--fg-muted); margin-left: 4px; font-weight: 500; }
 
 /* ───── Section ───── */
@@ -245,9 +239,9 @@ section { padding: 88px 0; border-bottom: 1px solid var(--border); }
 .section-head .kicker { font-size: 13px; font-weight: 600; color: var(--accent); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 10px; }
 .section-head h2 {
 	font-family: var(--font-display);
-	font-size: clamp(28px, 3.5vw, 40px);
+	font-size: 40px;
 	line-height: 1.15;
-	letter-spacing: -0.02em;
+	letter-spacing: 0;
 	font-weight: 700;
 	max-width: 720px;
 }
@@ -265,8 +259,44 @@ section { padding: 88px 0; border-bottom: 1px solid var(--border); }
 }
 .pillar:hover { transform: translateY(-2px); border-color: var(--accent); }
 .pillar .num { font-family: var(--font-mono); font-size: 13px; color: var(--accent); margin-bottom: 14px; font-weight: 600; }
-.pillar h3 { font-size: 20px; margin-bottom: 10px; letter-spacing: -0.015em; }
+.pillar h3 { font-size: 20px; margin-bottom: 10px; letter-spacing: 0; }
 .pillar p { color: var(--fg-muted); font-size: 15px; }
+
+/* Engagement model */
+.program-grid {
+	display: grid;
+	grid-template-columns: repeat(5, minmax(0, 1fr));
+	gap: 18px;
+}
+.program-step {
+	min-width: 0;
+	padding: 20px 4px 0;
+	border-top: 2px solid var(--border-strong);
+}
+.program-step .step-label {
+	display: block;
+	font-family: var(--font-mono);
+	font-size: 12px;
+	font-weight: 700;
+	color: var(--accent);
+	margin-bottom: 12px;
+}
+.program-step h3 { font-size: 18px; line-height: 1.3; margin-bottom: 8px; letter-spacing: 0; }
+.program-step p { color: var(--fg-muted); font-size: 14px; line-height: 1.55; }
+.program-proof {
+	margin-top: 36px;
+	display: grid;
+	grid-template-columns: 1.15fr 1fr;
+	gap: 32px;
+	padding-top: 28px;
+	border-top: 1px solid var(--border);
+}
+.program-proof h3 { font-size: 18px; margin-bottom: 10px; letter-spacing: 0; }
+.program-proof p { color: var(--fg-muted); font-size: 15px; line-height: 1.6; }
+.proof-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 18px; }
+.proof-item { min-width: 0; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+.proof-item strong { display: block; font-size: 18px; color: var(--fg); }
+.proof-item span { display: block; margin-top: 2px; color: var(--fg-subtle); font-size: 12px; line-height: 1.4; }
 
 /* Headline stats */
 .headline-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 20px; }
@@ -310,8 +340,8 @@ section { padding: 88px 0; border-bottom: 1px solid var(--border); }
 	width: 140px; height: 140px; border-radius: 50%;
 	display: grid; place-items: center; color: var(--accent-on);
 	font-family: var(--font-display); font-size: 42px; font-weight: 700;
-	letter-spacing: -0.02em;
-	background: linear-gradient(135deg, var(--cmds-green-bright), var(--cmds-green));
+	letter-spacing: 0;
+	background: var(--accent);
 }
 .about-avatar-photo {
 	width: 140px; height: 140px;
@@ -321,7 +351,7 @@ section { padding: 88px 0; border-bottom: 1px solid var(--border); }
 	display: block;
 }
 [data-theme="dark"] .about-avatar-photo { box-shadow: 0 4px 18px rgba(233,133,162,0.2); }
-[data-theme="dark"] .about-avatar:not(.about-avatar-photo) { background: linear-gradient(135deg, var(--cmds-pink-light), var(--cmds-pink-dark)); }
+[data-theme="dark"] .about-avatar:not(.about-avatar-photo) { background: var(--accent); }
 .profile-photos { margin-top: 24px; }
 .profile-thumbs {
 	display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; margin-top: 12px;
@@ -364,7 +394,7 @@ section { padding: 88px 0; border-bottom: 1px solid var(--border); }
 .topic-card:hover { border-color: var(--accent); transform: translateY(-2px); }
 .topic-card .topic-num { font-family: var(--font-mono); font-size: 12px; color: var(--accent); font-weight: 600; margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
 .topic-card .topic-num::after { content: ""; flex: 1; height: 1px; background: var(--border); }
-.topic-card h3 { font-size: 18px; margin-bottom: 8px; letter-spacing: -0.015em; }
+.topic-card h3 { font-size: 18px; margin-bottom: 8px; letter-spacing: 0; }
 .topic-card p { color: var(--fg-muted); font-size: 14px; line-height: 1.55; }
 .topic-card .topic-audience { margin-top: 12px; font-family: var(--font-mono); font-size: 11px; color: var(--fg-subtle); letter-spacing: 0.02em; }
 
@@ -373,7 +403,7 @@ section { padding: 88px 0; border-bottom: 1px solid var(--border); }
 .tools-group .tools-group-head {
 	display: flex; align-items: baseline; gap: 14px; margin-bottom: 14px;
 }
-.tools-group .tools-group-head h3 { font-size: 15px; font-weight: 600; letter-spacing: -0.01em; }
+.tools-group .tools-group-head h3 { font-size: 15px; font-weight: 600; letter-spacing: 0; }
 .tools-group .tools-group-head .sub { font-size: 13px; color: var(--fg-subtle); }
 .tools-pills { display: flex; flex-wrap: wrap; gap: 8px; }
 .tools-pill {
@@ -466,7 +496,7 @@ section { padding: 88px 0; border-bottom: 1px solid var(--border); }
 	position: absolute; bottom: 24px; left: 50%; transform: translateX(-50%);
 	font-family: var(--font-mono); color: rgba(255,255,255,0.7); font-size: 13px;
 }
-.about-content h3 { font-size: 22px; margin-bottom: 4px; letter-spacing: -0.015em; }
+.about-content h3 { font-size: 22px; margin-bottom: 4px; letter-spacing: 0; }
 .about-content .role { color: var(--fg-muted); font-size: 14px; margin-bottom: 16px; }
 .about-content p { color: var(--fg-muted); font-size: 15px; margin-bottom: 14px; line-height: 1.65; }
 .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
@@ -654,7 +684,7 @@ td .type-tag { display: inline-block; font-family: var(--font-mono); font-size: 
 .hub-card .domain { font-family: var(--font-mono); font-size: 12px; color: var(--accent); margin-bottom: 10px; font-weight: 500; display: flex; align-items: center; gap: 6px; }
 .hub-card .domain::after { content: "↗"; margin-left: auto; opacity: 0; transform: translateX(-4px); transition: all 0.2s; }
 .hub-card:hover .domain::after { opacity: 1; transform: translateX(0); }
-.hub-card h4 { font-size: 16px; margin-bottom: 8px; letter-spacing: -0.01em; }
+.hub-card h4 { font-size: 16px; margin-bottom: 8px; letter-spacing: 0; }
 .hub-desc { color: var(--fg-muted); font-size: 13px; line-height: 1.5; margin-bottom: 12px; }
 .hub-tags { display: flex; flex-wrap: wrap; gap: 6px; }
 .hub-tag {
@@ -665,7 +695,7 @@ td .type-tag { display: inline-block; font-family: var(--font-mono); font-size: 
 	background: var(--accent-soft);
 	color: var(--accent);
 	font-weight: 500;
-	letter-spacing: -0.005em;
+	letter-spacing: 0;
 }
 
 /* Footer */
@@ -684,10 +714,14 @@ footer .wrap { display: grid; grid-template-columns: 1fr auto; gap: 40px; align-
 /* Responsive */
 @media (max-width: 860px) {
 	.hero { padding: 56px 0 48px; }
+	h1 { font-size: 44px; }
+	.section-head h2 { font-size: 32px; }
 	.hero-stats { grid-template-columns: repeat(2, 1fr); }
 	.hero-stat:nth-child(2) { border-right: none; }
 	.hero-stat:nth-child(1), .hero-stat:nth-child(2) { border-bottom: 1px solid var(--border); }
 	.pillars { grid-template-columns: 1fr; }
+	.program-grid { grid-template-columns: 1fr 1fr; }
+	.program-proof { grid-template-columns: 1fr; gap: 22px; }
 	.headline-grid { grid-template-columns: 1fr; }
 	.host-list { grid-template-columns: 1fr; }
 	.about-box { grid-template-columns: 1fr; text-align: left; }
@@ -709,12 +743,63 @@ footer .wrap { display: grid; grid-template-columns: 1fr auto; gap: 40px; align-
 	.col-host { display: none; }
 }
 
+@media (max-width: 520px) {
+	.program-grid { grid-template-columns: 1fr; }
+	.proof-list { grid-template-columns: 1fr 1fr; }
+}
+
 /* Animations respecting reduced motion */
 @media (prefers-reduced-motion: no-preference) {
 	.reveal { opacity: 0; transform: translateY(12px); transition: opacity 0.6s ease, transform 0.6s ease; }
 	.reveal.in { opacity: 1; transform: none; }
 }
 </style>
+
+<!-- Structured data: entity graph (CMDSPACE = 커맨드스페이스, founder 구요한) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://cmdspace.work/#org",
+      "name": "CMDSPACE",
+      "alternateName": ["커맨드스페이스", "커맨드 스페이스", "Command Space"],
+      "url": "https://cmdspace.work",
+      "logo": "https://cmdspace.work/assets/logos/cmds-logo-round.png",
+      "description": "커맨드스페이스(CMDSPACE)는 기업의 AI가 실제 업무에 정착하도록 지식·업무 흐름·사람을 함께 설계하는 기업 AX·컨텍스트 아키텍처 전문 서비스입니다.",
+      "founder": {
+        "@type": "Person",
+        "@id": "https://bio.cmdspace.work/#person",
+        "name": "구요한",
+        "alternateName": "Yohan Koo",
+        "url": "https://bio.cmdspace.work",
+        "jobTitle": "Founder & Principal Context Architect"
+      },
+      "email": "mailto:johnfkoo951@gmail.com",
+      "sameAs": [
+        "https://bio.cmdspace.work",
+        "https://github.com/johnfkoo951",
+        "https://www.linkedin.com/in/yohan-koo-a1baa3138/",
+        "https://x.com/YohanKoo",
+        "https://www.threads.com/@cmds_pace",
+        "https://www.instagram.com/cmds_pace/",
+        "https://www.youtube.com/@cmdspace",
+        "https://akm.cmdspace.work",
+        "https://jisan.cmdspace.work"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://cmdspace.work/#website",
+      "url": "https://cmdspace.work",
+      "name": "CMDSPACE — 커맨드스페이스",
+      "inLanguage": "ko",
+      "publisher": { "@id": "https://cmdspace.work/#org" }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -726,11 +811,12 @@ footer .wrap { display: grid; grid-template-columns: 1fr auto; gap: 40px; align-
 		</a>
 		<nav>
 			<a href="#value">Why</a>
-			<a href="#topics">Topics</a>
+			<a href="#program">Program</a>
+			<a href="#topics">Expertise</a>
 			<a href="#tools">Stack</a>
-			<a href="#about">Operator</a>
+			<a href="#headlines">Evidence</a>
+			<a href="#about">About</a>
 			<a href="#gallery">Gallery</a>
-			<a href="#hub">Ecosystem</a>
 		</nav>
 		<div class="header-right">
 			<button class="icon-btn" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
@@ -748,32 +834,26 @@ footer .wrap { display: grid; grid-template-columns: 1fr auto; gap: 40px; align-
 <!-- HERO -->
 <section class="hero" id="top" style="border-top: none;">
 	<div class="wrap">
-		<h1 class="reveal">명령이 일어나는 <br />공간, <span class="cmd accent-word">⌘ + Space</span>.</h1>
+		<h1 class="reveal">CMDSPACE.<br /><span class="accent-word">AI가 일하게 만드는 지식 구조.</span></h1>
 		<p class="hero-lead reveal">
-			커맨드스페이스는 맥OS 스팟라이트 단축키 <span class="cmd">⌘ + Space</span>에서 이름을 가져온 <span class="accent-word">지식관리 브랜드</span>입니다.
-			옵시디언 · LLM · 에이전트를 결합해, 외부에 구축한 지식 공간이 실제로 사용자의 일을 <em>지휘</em>하게 만드는 것을 지향합니다.
-		</p>
-		<p class="edu-note reveal">
-			<span class="edu-badge">교육 플랫폼</span>
-			<a class="accent-word" href="https://cmdspace.kr" target="_blank" rel="noopener"><strong>cmdspace.kr</strong></a>은 커맨드스페이스의 공식 교육 플랫폼입니다.
-			AI · 지식관리 · 옵시디언 강의와 코호트를 한곳에서 만나보세요.
+			CMDSPACE는 기업의 AI가 실제 업무에 정착하도록 지식·업무 흐름·사람을 함께 설계하는 기업 AX·컨텍스트 아키텍처 전문 서비스 회사입니다. 임원 교육과 코칭으로 문제를 발견하고, 진단·파일럿·조직 확산·운영체계로 연결합니다.
 		</p>
 		<div class="cta reveal cta-row">
-			<a class="btn btn-primary" href="https://cmdspace.kr" target="_blank" rel="noopener">
-				교육 플랫폼 입장
+			<a class="btn btn-primary" href="mailto:cmdspace.contact@gmail.com?subject=CMDSPACE%20%EA%B8%B0%EC%97%85%20AI%20%EC%A7%80%EC%8B%9D%EC%9A%B4%EC%98%81%EC%B2%B4%EA%B3%84%20%EB%AC%B8%EC%9D%98">
+				진단·프로젝트 문의
 				<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
 			</a>
-			<a class="btn btn-ghost" href="#headlines">교육 이력 보기</a>
-			<a class="btn btn-ghost" href="#hub">서비스 허브 →</a>
-			<a class="btn btn-ghost" href="https://bio.cmdspace.work" target="_blank" rel="noopener">
-				구요한 Bio
-				<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
-			</a>
-			<a class="btn-pdf" href="/assets/downloads/cmdspace-brochure.pdf" download>
+			<a class="btn btn-ghost" href="#program">참여 모델 보기</a>
+			<a class="btn-pdf" href="/assets/downloads/yohan-ax-portfolio.pdf" download>
 				<span class="pdf-icon">PDF</span>
-				소개자료 다운로드
+				AX 포트폴리오
 			</a>
+			<a class="btn-pdf" href="/assets/downloads/cmdspace-brochure.pdf" download><span class="pdf-icon">PDF</span>회사 소개</a>
 		</div>
+		<p class="edu-note reveal">
+			<span class="edu-badge">교육·코호트</span>
+			공개 강의와 코호트는 <a class="accent-word" href="https://cmdspace.kr" target="_blank" rel="noopener"><strong>cmdspace.kr</strong></a>에서 운영합니다.
+		</p>
 
 		<div class="hero-stats reveal">
 			<div class="hero-stat"><div class="label">누적 활동</div><div class="value" id="stat-total">—</div></div>
@@ -789,24 +869,51 @@ footer .wrap { display: grid; grid-template-columns: 1fr auto; gap: 40px; align-
 	<div class="wrap">
 		<div class="section-head reveal">
 			<div class="kicker">Positioning</div>
-			<h2>왜 <span class="accent-word">커맨드스페이스</span>인가</h2>
-			<p>이름은 두 층으로 읽힙니다. 한 층은 입력의 관문, 다른 층은 출력의 공간. 그 사이에서 지식은 두뇌를 대신해 일합니다.</p>
+			<h2>도구와 교육을 <span class="accent-word">실제 운영</span>으로 연결합니다</h2>
+			<p>AI 도입의 병목은 기능 부족보다 조직의 맥락·지식·책임이 흐려지는 데서 생깁니다. CMDSPACE는 세 영역을 하나의 설계로 묶습니다.</p>
 		</div>
 		<div class="pillars">
 			<div class="pillar reveal">
-				<div class="num">01 / Gateway</div>
-				<h3>지식의 스팟라이트</h3>
-				<p><span class="cmd">⌘ + Space</span>는 맥 안의 모든 정보로 들어가는 관문입니다. 커맨드스페이스는 지식에 접근하는 <span class="accent-word">인터페이스 자체</span>가 되기를 지향합니다.</p>
+				<div class="num">01 / Alignment</div>
+				<h3>경영진과 현장을 정렬</h3>
+				<p>임원 교육·코칭으로 조직의 실제 문제와 스폰서, 성공 기준을 먼저 확인합니다.</p>
 			</div>
 			<div class="pillar reveal">
-				<div class="num">02 / Commanding</div>
-				<h3>명령이 일어나는 공간</h3>
-				<p>지식은 뇌에 저장하는 것이 아니라 <span class="accent-word">외부에 배열해 조회·실행하는 것</span>입니다. 잘 설계된 지식 공간은 사용자를 대신해 일을 지휘합니다.</p>
+				<div class="num">02 / Context</div>
+				<h3>지식과 업무 흐름을 구조화</h3>
+				<p>문서·회의·경험을 Context Pack과 검색 가능한 지식 구조로 전환해 AI가 일할 맥락을 만듭니다.</p>
 			</div>
 			<div class="pillar reveal">
-				<div class="num">03 / Practice</div>
-				<h3>연구하면서 가르친다</h3>
-				<p>운영자는 자신의 10,000+ 노트 볼트를 <span class="accent-word">실험실이자 교재</span>로 씁니다. 오늘 실험한 것이 내일의 강의에서, 이번 주의 컨설팅에서 검증됩니다.</p>
+				<div class="num">03 / Operations</div>
+				<h3>책임과 품질을 운영 리듬으로</h3>
+				<p>접근 권한·갱신 주기·관리자 역할·품질 기준을 문서화해 교육 뒤에도 계속 작동하게 합니다.</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- PROGRAM -->
+<section id="program">
+	<div class="wrap">
+		<div class="section-head reveal">
+			<div class="kicker">Engagement model</div>
+			<h2>발견에서 운영까지, <span class="accent-word">다섯 단계</span>로 연결합니다</h2>
+			<p>고객의 문제·보안·데이터 성숙도에 따라 단계를 조정하며, 파일럿의 사용과 지표가 확인될 때만 확산을 권합니다.</p>
+		</div>
+		<div class="program-grid">
+			<div class="program-step reveal"><span class="step-label">01 Discover</span><h3>문제 발견</h3><p>임원 교육·코칭으로 우선 질문과 내부 스폰서를 확인합니다.</p></div>
+			<div class="program-step reveal"><span class="step-label">02 Diagnose</span><h3>기준선 진단</h3><p>지식 원천·핵심 업무·보안 조건·성공 기준을 정의합니다.</p></div>
+			<div class="program-step reveal"><span class="step-label">03 Pilot</span><h3>부서 파일럿</h3><p>한 부서·한 업무에 Context Pack·LLM Wiki·AI 흐름을 구축합니다.</p></div>
+			<div class="program-step reveal"><span class="step-label">04 Scale</span><h3>조직 확산</h3><p>수준별 핸즈온·관리자 양성·전달체계로 반복 가능성을 만듭니다.</p></div>
+			<div class="program-step reveal"><span class="step-label">05 Operate</span><h3>운영 정착</h3><p>책임·갱신·품질·보안·분기 감사를 운영 리듬으로 만듭니다.</p></div>
+		</div>
+		<div class="program-proof reveal">
+			<div><h3>검증된 수행 범위</h3><p>고객명·경영진 실명·세부 코칭 내용은 승인 범위에 따라 비식별화합니다. 고객 내부 성과를 CMDSPACE의 성과로 재귀속하지 않습니다.</p></div>
+			<div class="proof-list">
+				<div class="proof-item"><strong>855명</strong><span>그룹 임원 대상 프로그램</span></div>
+				<div class="proof-item"><strong>15명·8.5h</strong><span>회장단·CEO 프로그램</span></div>
+				<div class="proof-item"><strong>약 2,500명</strong><span>온·오프라인 라이브 AI 시연</span></div>
+				<div class="proof-item"><strong>158건</strong><span>2025년 강의 기록</span></div>
 			</div>
 		</div>
 	</div>
@@ -848,7 +955,7 @@ footer .wrap { display: grid; grid-template-columns: 1fr auto; gap: 40px; align-
 			<div class="topic-card reveal">
 				<div class="topic-num">05</div>
 				<h3>CEO · 리더십 AX 교육</h3>
-				<p>LG인화원 AX Camp(for Leaders / for CEO)로 임원 900명, 회장단·CEO 1:1 코칭. AI 시대에 조직과 본인의 의사결정을 어떻게 재설계할 것인가.</p>
+				<p>그룹 임원·회장단·CEO 대상 AX 교육과 1:1 코칭. AI 시대에 조직과 본인의 의사결정을 어떻게 재설계할 것인가.</p>
 				<div class="topic-audience">→ 사장 · 부사장 · 임원 · 대기업/공공기관 리더</div>
 			</div>
 			<div class="topic-card reveal">
@@ -866,7 +973,7 @@ footer .wrap { display: grid; grid-template-columns: 1fr auto; gap: 40px; align-
 			<div class="topic-card reveal">
 				<div class="topic-num">08</div>
 				<h3>노코드·자동화</h3>
-				<p>n8n 워크플로우로 일상 자동화, Google Sheet + GPT API 연동, 교육·HR·마케팅 자동화 설계. 코드 없이 일하는 방식을 바꾸는 레시피.</p>
+				<p>n8n 워크플로우로 일상 자동화, Google Sheet + GPT API 연동, 교육·HR·마케팅 자동화 설계. 코드 없이 일하는 방식을 바꾸는 레시피. ---</p>
 				<div class="topic-audience">→ 실무자 · 교육자 · 기획자</div>
 			</div>
 		</div>
@@ -953,8 +1060,8 @@ footer .wrap { display: grid; grid-template-columns: 1fr auto; gap: 40px; align-
 	<div class="wrap">
 		<div class="section-head reveal">
 			<div class="kicker">At a glance</div>
-			<h2>한 눈에 보는 <span class="accent-word">교육 이력</span></h2>
-			<p>대학 강의·기업 교육·CEO 코칭·오픈 스터디·컨퍼런스 발표까지, 지난 5년간의 활동을 한 화면에서.</p>
+			<h2>한 눈에 보는 <span class="accent-word">수행 이력</span></h2>
+			<p>기업 교육·경영진 코칭·대학 강의·연구·자문·컨퍼런스를 포함한 현행 활동 DB를 공개합니다. 전체 활동 기록과 강의 횟수는 구분해 읽어 주세요.</p>
 		</div>
 
 		<div class="headline-grid">
@@ -988,28 +1095,28 @@ footer .wrap { display: grid; grid-template-columns: 1fr auto; gap: 40px; align-
 <section id="about">
 	<div class="wrap">
 		<div class="section-head reveal">
-			<div class="kicker">Operator</div>
+			<div class="kicker">Founder & Principal Context Architect</div>
 			<h2><span class="accent-word">구요한</span></h2>
-			<p>커맨드스페이스를 기획·운영하는 사람. 차의과학대학교 겸임교수 · KIRD 객원교수 · PKM × 생성형 AI 실천가 · 기업 교육자.</p>
+			<p>연구하면서 가르치는 실천가. 경영진의 언어와 현업의 업무, AI가 필요로 하는 지식 구조를 하나의 설계로 연결합니다.</p>
 		</div>
 		<div class="about-box reveal">
 			<img class="about-avatar about-avatar-photo" src="/assets/profile/profile-main.jpg" alt="구요한 Yohan Koo" />
 			<div class="about-content">
 				<h3>구요한 <span style="font-size:14px;color:var(--fg-subtle);font-weight:400;">Yohan Koo</span></h3>
-				<div class="role">CMDSPACE 대표 · 차의과학대학교 겸임교수 · KIRD 객원교수 · 기업 교육·컨설팅 운영자 · 뉴스레터 「더배러」 발행인</div>
+				<div class="role">CMDSPACE 대표·수석 컨텍스트 설계자 · 차의과학대학교 겸임교수 · KIRD 객원교수 · 「더배러」 발행인</div>
 				<p>
-					연구자가 아니라 <span class="accent-word">"연구하면서 가르치는 실천가"</span>로 자신을 정의합니다. LG 임원 900명 규모의 LG인화원 AX Camp, 서울대·한양대·차의과학대 대학 강의, 회장단·CEO 1:1 코칭, 오픈 스터디를 운영하며 그 과정 자체를 옵시디언 볼트에 기록·재사용합니다.
+					<span class="accent-word">그룹 전체 임원 855명 대상 프로그램</span>, 회장단·CEO 15명 프로그램, 약 2,500명 온·오프라인 라이브 AI 시연을 설계·운영했습니다. 2025년 현행 이력 DB에는 Lecture 포함 기록 158건이 있습니다.
 				</p>
 				<p>
-					현재 네 개의 축을 동시에 연구·교육합니다 — <span class="accent-word">옵시디언 기반 PKM</span> · <span class="accent-word">System Files 인프라</span> · <span class="accent-word">LLM Wiki 위성 볼트</span> · <span class="accent-word">9Yohan 멀티 에이전트</span>.
+					1만여 개 지식 파일을 운영하며 <span class="accent-word">옵시디언 PKM</span> · <span class="accent-word">System Files</span> · <span class="accent-word">LLM Wiki</span> · <span class="accent-word">9Yohan</span>을 기업 AI 지식운영의 방법론·내부 증거·R&amp;D 자산으로 발전시킵니다.
 				</p>
 				<div class="tags">
 					<span class="tag">#생성형AI</span>
 					<span class="tag">#지식관리</span>
 					<span class="tag">#옵시디언</span>
 					<span class="tag">#ClaudeCode</span>
-					<span class="tag">#기업교육</span>
-					<span class="tag">#CEO코칭</span>
+					<span class="tag">#ContextArchitecture</span>
+					<span class="tag">#KnowledgeOperations</span>
 				</div>
 				<div class="profile-photos">
 					<div class="profile-thumbs">
@@ -1051,7 +1158,7 @@ footer .wrap { display: grid; grid-template-columns: 1fr auto; gap: 40px; align-
 <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="사진 크게 보기" aria-hidden="true">
 	<button class="lb-close" id="lb-close" aria-label="닫기">×</button>
 	<button class="lb-nav lb-prev" id="lb-prev" aria-label="이전">‹</button>
-	<img id="lb-img" src="" alt="" />
+	<img id="lb-img" alt="" />
 	<button class="lb-nav lb-next" id="lb-next" aria-label="다음">›</button>
 	<div class="lb-count" id="lb-count"></div>
 </div>
@@ -1063,10 +1170,14 @@ footer .wrap { display: grid; grid-template-columns: 1fr auto; gap: 40px; align-
 			<div class="kicker">Full Record</div>
 			<h2>전체 <span class="accent-word">이력 상세</span></h2>
 			<p>연도 · 주제 · 유형 · 키워드로 필터링해서 살펴볼 수 있습니다.</p>
-			<div style="margin-top: 20px;">
+			<div class="cta" style="margin-top: 20px;">
+				<a class="btn-pdf" href="/assets/downloads/yohan-ax-portfolio.pdf" download>
+					<span class="pdf-icon">PDF</span>
+					AX 포트폴리오
+				</a>
 				<a class="btn-pdf" href="/assets/downloads/cmdspace-brochure.pdf" download>
 					<span class="pdf-icon">PDF</span>
-					전체 소개자료 다운로드
+					CMDSPACE 회사 소개
 				</a>
 			</div>
 		</div>
@@ -1160,6 +1271,18 @@ footer .wrap { display: grid; grid-template-columns: 1fr auto; gap: 40px; align-
 						<span class="hub-tag">#CLAUDEmd</span>
 						<span class="hub-tag">#AGENTSmd</span>
 						<span class="hub-tag">#규칙</span>
+					</div>
+				</a>
+				<a class="hub-card" href="https://akm.cmdspace.work" target="_blank" rel="noopener">
+					<div class="domain">akm.cmdspace.work</div>
+					<h4>AKM Index</h4>
+					<p class="hub-desc">에이전틱 지식관리 성숙도를 재는 공개 루브릭 — 5기둥 · 25기준 자가평가와 제출 결과 보드.</p>
+					<div class="hub-tags">
+						<span class="hub-tag">#AKM</span>
+						<span class="hub-tag">#루브릭</span>
+						<span class="hub-tag">#자가평가</span>
+						<span class="hub-tag">#평가보드</span>
+						<span class="hub-tag">#AgenticKM</span>
 					</div>
 				</a>
 				<a class="hub-card" href="https://llm-wiki.cmdspace.work" target="_blank" rel="noopener">
@@ -1322,6 +1445,17 @@ footer .wrap { display: grid; grid-template-columns: 1fr auto; gap: 40px; align-
 						<span class="hub-tag">#허브</span>
 					</div>
 				</a>
+				<a class="hub-card" href="https://jisan.cmdspace.work" target="_blank" rel="noopener">
+					<div class="domain">jisan.cmdspace.work</div>
+					<h4>紙散 · 지산 블로그</h4>
+					<p class="hub-desc">구요한의 저자 블로그 — 에세이와 프레임워크의 인용 정본을 영속 URL로 발행합니다.</p>
+					<div class="hub-tags">
+						<span class="hub-tag">#지산</span>
+						<span class="hub-tag">#블로그</span>
+						<span class="hub-tag">#에세이</span>
+						<span class="hub-tag">#저자</span>
+					</div>
+				</a>
 				<a class="hub-card" href="https://plaud.cmdspace.work" target="_blank" rel="noopener">
 					<div class="domain">plaud.cmdspace.work</div>
 					<h4>Plaud 5축 가이드</h4>
@@ -1399,7 +1533,7 @@ footer .wrap { display: grid; grid-template-columns: 1fr auto; gap: 40px; align-
 		<div class="foot-brand">
 			<img src="/assets/logos/cmds-logo-typo-black.png" alt="CMDSPACE" class="foot-logo-light" />
 			<img src="/assets/logos/cmds-logo-typo-white.png" alt="CMDSPACE" class="foot-logo-dark" style="display:none;" />
-			<p>⌘ + Space에서 이름을 가져온 지식관리 브랜드.<br>AI와 기록의 교차점에서, 지식이 일하게 만듭니다.<br>구요한(Yohan Koo) 운영</p>
+			<p>기업의 AI가 실제 업무에 정착하도록<br>지식·업무 흐름·사람을 함께 설계합니다.<br>구요한 · Founder &amp; Principal Context Architect</p>
 			<div class="foot-links">
 				<a href="https://system.cmdspace.work" target="_blank" rel="noopener">System Files</a>
 				<a href="https://github.com/johnfkoo951/cmds-system-files" target="_blank" rel="noopener">GitHub</a>
@@ -1750,10 +1884,11 @@ document.addEventListener('keydown', e => {
 const NAV_SECTIONS = [
 	{ id: 'top',       label: 'Home',      h: 18 },
 	{ id: 'value',     label: 'Why',       h: 40 },
-	{ id: 'topics',    label: 'Topics',    h: 58 },
+	{ id: 'program',   label: 'Program',   h: 52 },
+	{ id: 'topics',    label: 'Expertise', h: 58 },
 	{ id: 'tools',     label: 'Stack',     h: 52 },
-	{ id: 'headlines', label: 'Record',    h: 36 },
-	{ id: 'about',     label: 'Operator',  h: 44 },
+	{ id: 'headlines', label: 'Evidence',  h: 36 },
+	{ id: 'about',     label: 'About',     h: 44 },
 	{ id: 'gallery',   label: 'Gallery',   h: 48 },
 	{ id: 'history',   label: 'Archive',   h: 72 },
 	{ id: 'hub',       label: 'Ecosystem', h: 56 }

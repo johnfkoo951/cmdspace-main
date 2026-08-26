@@ -1,4 +1,5 @@
 data/activities-private.csv
+docs
 .env.local
 .DS_Store
 .omc/

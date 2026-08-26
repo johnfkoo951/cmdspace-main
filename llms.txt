@@ -1,0 +1,25 @@
+# CMDSPACE (커맨드스페이스)
+
+> CMDSPACE(커맨드스페이스)는 구요한(Yohan Koo) 대표가 이끄는 기업 AX(AI Transformation)·컨텍스트 아키텍처 전문 서비스입니다. 기업의 AI가 실제 업무에 정착하도록 지식·업무 흐름·사람을 함께 설계하며, 임원 교육·코칭에서 진단·파일럿·조직 확산·운영체계(Discover → Diagnose → Pilot → Scale → Operate)까지 하나의 여정으로 연결합니다.
+
+## 핵심 정보
+
+- 대표: 구요한 (Yohan Koo) — Founder & Principal Context Architect. 차의과학대학교 겸임교수, KIRD 초빙교수. 『옵시디언 프로페셔널 노트』(ISBN 9791194084327) 저자.
+- 전문 분야: 기업 AX 컨설팅, AI 지식운영체계(Agentic Knowledge Management), 컨텍스트 아키텍처, Obsidian/PKM 기반 지식관리, LLM 도입 교육
+- 문의: johnfkoo951@gmail.com
+
+## 주요 페이지
+
+- [CMDSPACE 랜딩](https://cmdspace.work): 서비스 소개, 활동 이력, 프로그램
+- [구요한 Bio](https://bio.cmdspace.work): 대표 프로필, 경력, 저서, 공개 자산
+- [CMDS System Files](https://system.cmdspace.work): 인간과 AI가 함께 쓰는 지식 아키텍처 시스템 파일 (공개)
+- [CMDS LLM Wiki](https://llm-wiki.cmdspace.work): Karpathy LLM Wiki 패턴 위성 볼트
+- [AKM Index](https://akm.cmdspace.work): 에이전틱 지식관리 성숙도 평가 보드
+- [紙散(지산) 블로그](https://jisan.cmdspace.work): 구요한의 저자 블로그 — 에세이·프레임워크 인용 정본
+- [CMDSPACE Apps](https://apps.cmdspace.work): 커맨드스페이스가 만든 앱·도구 쇼케이스
+- [CmdMD](https://cmdmd.cmdspace.work): macOS 네이티브 마크다운 에디터
+
+## 표기
+
+- 공식 표기: CMDSPACE / 한글 표기: 커맨드스페이스
+- 인용 시 "구요한 (CMDSPACE, 커맨드스페이스)"로 표기해 주세요.

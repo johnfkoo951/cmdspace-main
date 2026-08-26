@@ -1,10 +1,11 @@
 # cmdspace.work — Landing
 
-Apex landing for the **CMDSPACE** ecosystem. Single static page (vanilla HTML/CSS/JS, no build) that:
+Apex landing for **CMDSPACE**, an enterprise AX and context-architecture professional-services company. The single static page (vanilla HTML/CSS/JS, no build):
 
-1. Introduces the brand (positioning + operator)
-2. Headlines & details 구요한's education/consulting history
-3. Hubs all public `*.cmdspace.work` subdomains
+1. Presents the `Discover → Diagnose → Pilot → Scale → Operate` engagement model
+2. Introduces Yohan Koo's enterprise AX/context-architect role and verified activity record
+3. Publishes sanitized company and AX portfolio PDFs
+4. Hubs public `*.cmdspace.work` properties
 
 Data is loaded client-side from `./data/activities.csv` and updated **weekly** from the vault.
 
@@ -17,6 +18,7 @@ cmdspace-main/
 │   ├── activities.csv         # 구요한 이력 (weekly-updated)
 │   └── gallery.json           # gallery manifest (auto-generated)
 ├── assets/
+│   ├── downloads/              # sanitized public PDFs
 │   ├── logos/                 # round favicon + typo lockups (light/dark)
 │   ├── og/og-landing.png      # 1200×630 OG card + HTML template
 │   ├── profile/
@@ -103,6 +105,8 @@ Excluded from the hub per existing policy:
 
 ## 연결 프로젝트 — cmds-bio
 
-`bio.cmdspace.work` (레포 `/Users/yohankoo/DEV/cmds-bio`) 와 프로필 직함(차의과학대학교 겸임교수 · KIRD 객원교수)·대표 수치(활동 450+ / 노트 10,000+ / LG 900명)·링크 자산을 공유합니다.
+`bio.cmdspace.work` (레포 `/Users/yohankoo/DEV/cmds-bio`) 와 프로필 직함(`Founder & Principal Context Architect`)·대표 수치(전체 활동 기록 450+ / 1만여 개 지식 파일 / 그룹 임원 855명 대상 프로그램)·링크 자산을 공유합니다.
+
+`docs/`는 PDF 생성용 원문이며 Vercel 배포에서 제외됩니다. 공개 산출물은 `assets/downloads/`의 비식별 PDF만 사용합니다.
 
 이 레포에서 위 정보를 변경하면 **cmds-bio 도 함께 갱신**해야 합니다. cmds-bio 쪽 변경 기록은 해당 레포의 `docs/06-worklog.md` 를 참조하세요. 반대 방향(이 레포로의 참조)은 cmds-bio README 에 반영되어 있습니다.

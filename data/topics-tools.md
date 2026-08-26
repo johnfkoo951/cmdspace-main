@@ -3,11 +3,11 @@ type: note
 aliases:
   - cmdspace.work Topics & Tools
   - 커맨드스페이스 다루는 주제와 도구
-description: Source-of-truth for the "Topics" and "Tools" sections of cmdspace.work landing page. When updated, sync to `/DEV/cmdspace-main/data/topics-tools.md` and trigger the `cmdspace-update` skill to regenerate the relevant HTML sections. Each topic has id/title/desc/audience fields; each tool group has a name/sub and a list of tool objects with name and primary flag.
+description: "Source-of-truth for the Topics and Tools sections of the cmdspace.work landing page. It defines public education topics and tool groups while the company positioning and engagement model remain in the main page source."
 author:
   - "[[구요한]]"
 date created: 2026-04-21
-date modified: 2026-04-21
+date modified: 2026-07-10
 tags:
   - cmdspace
   - landing
@@ -59,7 +59,7 @@ Claude Code · OpenClaw 기반 에이전트 구축, MCP로 외부 도구 연결,
 
 ### 05 · CEO · 리더십 AX 교육
 
-LG 임원·회장단 교육, LG인화원 AX Camp(for Leaders / for CEO), CEO 1:1 코칭. AI 시대에 조직과 본인의 의사결정을 어떻게 재설계할 것인가.
+그룹 임원·회장단·CEO 대상 AX 교육과 1:1 코칭. AI 시대에 조직과 본인의 의사결정을 어떻게 재설계할 것인가.
 
 - 대상: 사장 · 부사장 · 임원 · 대기업/공공기관 리더
 
