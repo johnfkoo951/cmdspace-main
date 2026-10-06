@@ -4,20 +4,61 @@
 
 ## 핵심 정보
 
-- 대표: 구요한 (Yohan Koo) — Founder & Principal Context Architect. 차의과학대학교 겸임교수, KIRD 초빙교수. 『옵시디언 프로페셔널 노트』(ISBN 9791194084327) 저자.
+- 대표: 구요한 (Yohan Koo) — Founder & Principal Context Architect. 차의과학대학교 겸임교수, KIRD 객원교수. 『옵시디언 프로페셔널 노트』(ISBN 9791194084327) 저자.
 - 전문 분야: 기업 AX 컨설팅, AI 지식운영체계(Agentic Knowledge Management), 컨텍스트 아키텍처, Obsidian/PKM 기반 지식관리, LLM 도입 교육
 - 문의: johnfkoo951@gmail.com
 
 ## 주요 페이지
 
-- [CMDSPACE 랜딩](https://cmdspace.work): 서비스 소개, 활동 이력, 프로그램
-- [구요한 Bio](https://bio.cmdspace.work): 대표 프로필, 경력, 저서, 공개 자산
-- [CMDS System Files](https://system.cmdspace.work): 인간과 AI가 함께 쓰는 지식 아키텍처 시스템 파일 (공개)
-- [CMDS LLM Wiki](https://llm-wiki.cmdspace.work): Karpathy LLM Wiki 패턴 위성 볼트
-- [AKM Index](https://akm.cmdspace.work): 에이전틱 지식관리 성숙도 평가 보드
-- [紙散(지산) 블로그](https://jisan.cmdspace.work): 구요한의 저자 블로그 — 에세이·프레임워크 인용 정본
-- [CMDSPACE Apps](https://apps.cmdspace.work): 커맨드스페이스가 만든 앱·도구 쇼케이스
-- [CmdMD](https://cmdmd.cmdspace.work): macOS 네이티브 마크다운 에디터
+- [CMDSPACE 랜딩](https://cmdspace.work): 서비스·활동 이력·공개 서비스 허브
+
+### Start Here · 생태계 입구
+
+- [CMDSPACE Brain](https://brain.cmdspace.work): 세컨드브레인·LLM Wiki와 CMDSPACE 지식관리 생태계를 처음 만나는 분을 위한 안내 허브.
+- [CMDSPACE Apps](https://apps.cmdspace.work): 직접 만든 macOS 앱·Obsidian 플러그인·웹 서비스·개발 도구를 모은 공개 카탈로그.
+- [Bio](https://bio.cmdspace.work): 구요한의 모든 공개 링크를 한곳에 모은 링크인바이오.
+
+### Knowledge · 지식 시스템과 프레임워크
+
+- [CMDS System Files](https://system.cmdspace.work): 사람과 AI가 함께 읽는 CMDS 지식 아키텍처. 시스템 문서·공용 규칙·명령과 운영 기준을 공개합니다.
+- [LLM Wiki Showcase](https://llm-wiki.cmdspace.work): Karpathy LLM Wiki 패턴(Raw Sources · Wiki · Queries)을 별도 볼트로 구현한 위성 쇼케이스.
+- [AKM Index](https://akm.cmdspace.work): 에이전틱 지식관리 성숙도를 재는 공개 루브릭 — 5기둥 · 25기준 자가평가와 제출 결과 보드.
+- [Vault Map](https://vault-map.cmdspace.work): 메인 볼트·LLM Wiki·글로벌 설정의 관계와 룰·명령·스킬·에이전트를 설명하는 시스템 지도.
+- [9Yohan Constellation](https://9yohan.cmdspace.work): 9명의 역사적 요한이 CMDS Division과 매핑된 멀티 에이전트 아키텍처.
+
+### Tools · 앱과 웹 서비스
+
+- [CmdMD](https://cmdmd.cmdspace.work): 렌더 프리뷰로 열리는 리뷰 우선 macOS 네이티브 마크다운 에디터.
+- [CmdTrace](https://cmdtrace.cmdspace.work): Claude Code 세션 트레이스를 가볍게 시각화하는 로컬 우선 뷰어 도구.
+- [CmdSync](https://cmdsync.cmdspace.work): 원격 음악 세션의 지연·지터·연결 구조를 살펴보는 macOS 대시보드 프로젝트.
+- [CMDS Share](https://share.cmdspace.work): Obsidian 노트 공유 서비스 소개. 공유 링크의 만료·회수·조회 관리를 지원합니다.
+- [AI 백일장](https://writing.cmdspace.work): 같은 주제로 사람이 쓴 글과 AI로 쓴 글을 이름표 없이 나란히 읽는 블라인드 백일장.
+
+### Guides · 도구 비교와 실무 가이드
+
+- [AI Deep Research 비교](https://ai-research.cmdspace.work): ChatGPT · Gemini · Claude · Perplexity · Grok의 Deep Research·추론 모드 실사용 비교(2026).
+- [OpenClaw Study Guide](https://openclaw.cmdspace.work): OpenClaw 설치·핵심 개념·스킬·활용 사례·보안을 다루는 스터디 가이드.
+- [Plaud 6채널 가이드](https://plaud.cmdspace.work): Web·Desktop·MCP·CLI·Skill·App 여섯 채널의 능력 비교와 채널 선택·워크플로우 가이드.
+- [터미널 앱 종합 비교 2026](https://terminal.cmdspace.work): AI 에이전트 시대의 터미널·멀티플렉서 도구를 사용성·플랫폼·SSH·API 관점에서 비교합니다.
+- [HR Prompt Playbook](https://hrprompt.cmdspace.work): HR 실무자를 위한 생성형 AI 프롬프트 플레이북.
+
+### Talks · 발표·교육 쇼케이스
+
+- [CMDSPACE Deck Gallery](https://deck.cmdspace.work): 같은 콘텐츠를 다양한 시각 언어로 보여주는 강의·컨설팅 덱 시스템 전시장.
+- [꿈도 환승이 되나요](https://dream.cmdspace.work): 2명짜리 회사가 하네스 위에서 서비스 함대를 만드는 법 — 2026 꿈환승 컨퍼런스 발표 + 쇼케이스.
+- [SICEM 2026 Keynote](https://sicem.cmdspace.work): 「AI로 달라지는 업무」 SICEM 2026 컨퍼런스 발표 자료 웹 버전.
+- [Knowledge Resolution · 연구 쇼케이스](https://showcloud.cmdspace.work): 지식의 해상도와 연구 지식 구조화를 소개하는 학술 연구 쇼케이스. course 도메인과 같은 자료의 대표 링크입니다.
+- [지식의 해상도 (멀티모달)](https://resolution.cmdspace.work): 「지식의 해상도」 프레임워크를 글·오디오·플랫폼별 쇼츠로 동시 출력한 멀티모달 쇼케이스.
+- [CMDS × GOBI Cohort 1기](https://cohort.cmdspace.work): PKM · 마크다운 · 옵시디언 · CMDS 시스템 · AI 협업 · 멀티볼트 8개 개념 + 2개 실습. 코호트 1기 사전 학습 · 사후 레퍼런스 강의 자산.
+- [CMDS Youth Showcase](https://youth.cmdspace.work): 중고등학생 대상 CMDS 프로세스 교육의 결과물 쇼케이스 (2026).
+
+### Archives · 글·현장·커뮤니티 기록
+
+- [紙散 · 지산 블로그](https://jisan.cmdspace.work): 구요한의 저자 블로그 — 에세이와 프레임워크의 인용 정본을 영속 URL로 발행합니다.
+- [이동식 작전본부](https://mcc.cmdspace.work): 차량·전원·연결망·로컬 지식 시스템으로 구성한 이동식 업무 환경 쇼케이스.
+- [Starlink Telemetry](https://starlink.cmdspace.work): 서울과 미국 서부 이동 환경에서 측정한 Starlink 처리량·지연·연결 상태 기록.
+- [Windlight · 바람빛교회 아카이브](https://windlight.cmdspace.work): 성경 읽기·묵상 나눔·설교 속 책 발췌를 모은 교회 공동체 아카이브.
+- [Spring Camp 2026](https://yhn.cmdspace.work): 스프링 캠프 감정 기록과 개인 아카이브.
 
 ## 표기
 

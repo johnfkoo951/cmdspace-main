@@ -28,18 +28,21 @@ cmdspace-main/
 ├── scripts/
 │   ├── build-og.sh            # regenerate OG image
 │   └── build-gallery.sh       # rescan gallery + regenerate manifest
-├── sync-activities.sh         # vault → DEV CSV sync
+├── sync-activities.sh         # Airtable → data/activities.csv sync
 └── README.md
 ```
 
 ## Weekly update flow (activities CSV)
 
 ```bash
-# 1. Update the CSV inside the vault:
-#    "/Users/yohankoo/Local Obsidian_MBP/CMDSPACE_Local_MBP/70. Outputs/74. Projects/구요한 이력 DB/"
+# 1. Edit records in Airtable: base "CMDS Work" → table "프로젝트 이력" → view "Export(Educations)"
+#    (token lives in ~/.claude/skills/airtable-cmds-work-export/.env — never commit)
 
-# 2. Sync into this project
+# 2. Dry-run: diff Airtable vs the live site (added / REMOVED rows, header, data health)
 cd /Users/yohankoo/DEV/cmdspace-main
+./sync-activities.sh --check
+
+# 3. Write data/activities.csv (strips BOM, UTC→KST start_at, "A, B"→"A,B")
 ./sync-activities.sh
 
 # 3. Deploy
@@ -72,10 +75,10 @@ The build script:
 ## CSV schema (must match)
 
 ```
-period,host,display_title,start_at,duration_hours,affiliation,topic,activity_type
+period,host,display_title,start_at,duration_hours,topic,activity_type
 ```
 
-> 볼트 원본 DB에는 `UID`·`details`·`is_completed` 컬럼이 더 있지만, `details` 는 PII 성격이라 공개 CSV 에서 의도적으로 제외됩니다. 위 8컬럼이 `sync-activities.sh` 가 실제로 내보내는 공개 스키마입니다. 프론트는 미래 `start_at` 행을 로드 시점에 필터링합니다.
+> 공개 CSV는 위 7컬럼입니다. Airtable 뷰에 보이는 `제목(임의)`(내부 라벨)와 숨김 필드는 exporter 의 allowlist 로 제외됩니다 — Airtable `view` 파라미터는 레코드만 거르고 필드는 안 거르므로 allowlist 가 PII 방벽입니다. 프론트는 미래 `start_at` 행을 필터링합니다.
 
 See `/Users/yohankoo/Local Obsidian_MBP/CMDSPACE_Local_MBP/70. Outputs/74. Projects/구요한 이력 DB/CMDSPACE 이력 데이터 스키마.md` for field definitions.
 
@@ -105,8 +108,16 @@ Excluded from the hub per existing policy:
 
 ## 연결 프로젝트 — cmds-bio
 
-`bio.cmdspace.work` (레포 `/Users/yohankoo/DEV/cmds-bio`) 와 프로필 직함(`Founder & Principal Context Architect`)·대표 수치(전체 활동 기록 450+ / 1만여 개 지식 파일 / 그룹 임원 855명 대상 프로그램)·링크 자산을 공유합니다.
+`bio.cmdspace.work` (레포 `/Users/yohankoo/DEV/cmds-bio`) 와 프로필 직함(`Founder & Principal Context Architect`)·대표 수치(전체 활동 기록 480+ / 1만여 개 지식 파일 / 그룹 임원 855명 대상 프로그램)·링크 자산을 공유합니다.
 
 `docs/`는 PDF 생성용 원문이며 Vercel 배포에서 제외됩니다. 공개 산출물은 `assets/downloads/`의 비식별 PDF만 사용합니다.
 
 이 레포에서 위 정보를 변경하면 **cmds-bio 도 함께 갱신**해야 합니다. cmds-bio 쪽 변경 기록은 해당 레포의 `docs/06-worklog.md` 를 참조하세요. 반대 방향(이 레포로의 참조)은 cmds-bio README 에 반영되어 있습니다.
+
+## Public hub maintenance
+
+- The vault `cmdspace-landing/hub-links.md` is the reviewed master; `data/hub-links.json` is its public deployment copy.
+- Run `python3 scripts/sync-hub.py` after editing the master. For a portable rebuild, use `python3 scripts/sync-hub.py --data`.
+- Never add a domain just because it responds: exclude customer pages, noindex material, research-participant forms, and individual shared notes.
+- Alias pairs: `course` → `showcloud`, `files` → `system`. Keep one representative card; aliases remain active.
+- 2026-09-12: 30 reviewed links in 6 groups. Added Brain, Apps, Deck, AI 백일장, CmdSync, CMDS Share, and Mobile Command Center. Updated profile education and KIRD title in llms.txt.

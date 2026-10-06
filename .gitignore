@@ -4,3 +4,6 @@
 .env*
 # PII 원본 백업 — 절대 커밋 금지 (sync-activities.sh가 생성)
 data/activities-private.csv
+
+# Local deployment inventory (not a public document)
+docs/hub-audit-*.md

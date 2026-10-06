@@ -3,3 +3,9 @@ docs
 .env.local
 .DS_Store
 .omc/
+
+# Local maintenance sources, not public website assets
+scripts
+sync-activities.sh
+README.md
+.gitignore
