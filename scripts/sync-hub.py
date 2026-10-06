@@ -8,7 +8,7 @@ import re
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_MASTER = Path.home() / 'Local Obsidian_MBP/CMDSPACE_Local_MBP/70. Outputs/74. Projects/cmdspace-landing/hub-links.md'
-EXCLUDED = {'lg', 'lge', 'ax', 'test', 'labs', 'akm-study', 'files', 'course'}
+EXCLUDED = {'lg', 'lge', 'ax', 'test', 'akm-study', 'files', 'course'}  # labs: 2026-10-06 공개 승인
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--master', type=Path, default=DEFAULT_MASTER)
 parser.add_argument('--data', action='store_true', help='Rebuild from the checked-in public JSON')

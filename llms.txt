@@ -25,6 +25,8 @@
 - [AKM Index](https://akm.cmdspace.work): 에이전틱 지식관리 성숙도를 재는 공개 루브릭 — 5기둥 · 25기준 자가평가와 제출 결과 보드.
 - [Vault Map](https://vault-map.cmdspace.work): 메인 볼트·LLM Wiki·글로벌 설정의 관계와 룰·명령·스킬·에이전트를 설명하는 시스템 지도.
 - [9Yohan Constellation](https://9yohan.cmdspace.work): 9명의 역사적 요한이 CMDS Division과 매핑된 멀티 에이전트 아키텍처.
+- [Jev × CMDS 실측 기록](https://jev.cmdspace.work): 글을 쓰지 않고 판단만 하는 모델 Jev를 1만+ 노트 볼트의 입력·검색에 붙여 잰 기록. 제안은 Jev가, 실행은 코드와 사람이.
+- [구요한의 독서와 지식지도](https://reading.cmdspace.work): 다산의 지식 편집, 감정수업48감정, 개인 기록의 제목과 연결을 탐색하는 상시 지식자산.
 
 ### Tools · 앱과 웹 서비스
 
@@ -51,6 +53,7 @@
 - [지식의 해상도 (멀티모달)](https://resolution.cmdspace.work): 「지식의 해상도」 프레임워크를 글·오디오·플랫폼별 쇼츠로 동시 출력한 멀티모달 쇼케이스.
 - [CMDS × GOBI Cohort 1기](https://cohort.cmdspace.work): PKM · 마크다운 · 옵시디언 · CMDS 시스템 · AI 협업 · 멀티볼트 8개 개념 + 2개 실습. 코호트 1기 사전 학습 · 사후 레퍼런스 강의 자산.
 - [CMDS Youth Showcase](https://youth.cmdspace.work): 중고등학생 대상 CMDS 프로세스 교육의 결과물 쇼케이스 (2026).
+- [CMDSPACE Labs](https://labs.cmdspace.work): 강의·세미나·포럼 발표자료와 실습 키트, 연구 과제 기록을 행사별로 모은 자료실.
 
 ### Archives · 글·현장·커뮤니티 기록
 

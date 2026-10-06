@@ -120,4 +120,5 @@ Excluded from the hub per existing policy:
 - Run `python3 scripts/sync-hub.py` after editing the master. For a portable rebuild, use `python3 scripts/sync-hub.py --data`.
 - Never add a domain just because it responds: exclude customer pages, noindex material, research-participant forms, and individual shared notes.
 - Alias pairs: `course` → `showcloud`, `files` → `system`. Keep one representative card; aliases remain active.
+- 2026-10-06: added `jev` (Knowledge) and `labs` (Talks). `labs` is noindex but was explicitly approved for the hub and bio; it is removed from `EXCLUDED` in `scripts/sync-hub.py`.
 - 2026-09-12: 30 reviewed links in 6 groups. Added Brain, Apps, Deck, AI 백일장, CmdSync, CMDS Share, and Mobile Command Center. Updated profile education and KIRD title in llms.txt.
