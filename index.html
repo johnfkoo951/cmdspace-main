@@ -681,6 +681,10 @@ td .type-tag { display: inline-block; font-family: var(--font-mono); font-size: 
 	overflow: hidden;
 }
 .hub-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+.hub-card[hidden], .hub-group[hidden], .hub-nav .chip[hidden] { display: none; }
+.hub-group-desc { margin: -6px 0 14px; color: var(--fg-muted); font-size: 14px; line-height: 1.6; }
+.hub-when { display: inline-flex; align-items: center; gap: 6px; margin-bottom: 8px; font-size: 12.5px; font-weight: 700; color: var(--accent); }
+.hub-when::before { content: ""; width: 7px; height: 7px; border-radius: 999px; background: currentColor; }
 .hub-card .domain { font-family: var(--font-mono); font-size: 12px; color: var(--accent); margin-bottom: 10px; font-weight: 500; display: flex; align-items: center; gap: 6px; }
 .hub-card .domain::after { content: "↗"; margin-left: auto; opacity: 0; transform: translateX(-4px); transition: all 0.2s; }
 .hub-card:hover .domain::after { opacity: 1; transform: translateX(0); }
@@ -1238,9 +1242,10 @@ footer .wrap { display: grid; grid-template-columns: 1fr auto; gap: 40px; align-
 			<div class="kicker">Ecosystem</div>
 			<h2><span class="cmd accent-word">cmdspace.work</span> 서비스 허브</h2>
 			<p>처음이라면 Brain에서 시작하고, 도구는 Apps에서 찾아보세요. 공개 자료를 용도별로 정리했습니다.</p>
-			<p>공개 링크 33개 · 확인 2026-09-12 · 고객 전용·내부 자료 제외</p>
+			<p>공개 링크 34개 · 확인 2026-10-15 · 고객 전용·내부 자료 제외</p>
 		</div>
 		<nav class="hub-nav" aria-label="서비스 허브 분류">
+			<a class="chip" id="hub-nav-now" href="#hub-now">지금 열려 있는 강의</a>
 			<a class="chip" href="#hub-start">생태계 입구</a>
 			<a class="chip" href="#hub-knowledge">지식 시스템과 프레임워크</a>
 			<a class="chip" href="#hub-tools">앱과 웹 서비스</a>
@@ -1248,6 +1253,36 @@ footer .wrap { display: grid; grid-template-columns: 1fr auto; gap: 40px; align-
 			<a class="chip" href="#hub-talks">발표·교육 쇼케이스</a>
 			<a class="chip" href="#hub-archives">글·현장·커뮤니티 기록</a>
 		</nav>
+		<div class="hub-group reveal hub-timed" id="hub-now">
+			<h3>Now · 지금 열려 있는 강의</h3>
+			<p class="hub-group-desc">신청·공개 기간이 정해진 강의입니다. 기간이 끝나면 이 목록에서 자동으로 내려갑니다.</p>
+			<div class="hub-grid">
+				<a class="hub-card" data-phases="[{&quot;until&quot;: &quot;2026-10-20&quot;, &quot;ko&quot;: &quot;1기 모집 중 · LLM Wiki 10.21 개강&quot;, &quot;en&quot;: &quot;Cohort 1 open · LLM Wiki starts Oct 21&quot;}, {&quot;until&quot;: &quot;2026-11-04&quot;, &quot;ko&quot;: &quot;1기 모집 중 · Agent Workflow 11.5 개강&quot;, &quot;en&quot;: &quot;Cohort 1 open · Agent Workflow starts Nov 5&quot;}, {&quot;until&quot;: &quot;2026-11-07&quot;, &quot;ko&quot;: &quot;1기 진행 중 · 11.7 마지막 수업&quot;, &quot;en&quot;: &quot;Cohort 1 in progress · final session Nov 7&quot;}]" href="https://landing.cmdspace.kr/cmds-bootcamp-2026" target="_blank" rel="noopener">
+					<div class="domain">landing.cmdspace.kr/cmds-bootcamp-2026</div>
+					<p class="hub-when">1기 모집 중 · LLM Wiki 10.21 개강</p>
+					<h4>CMDS Bootcamp 1기</h4>
+					<p class="hub-desc">옵시디언부터 PKM, LLM Wiki, AI 에이전트 워크플로우까지 4과정. 온라인과 오프라인(영등포).</p>
+					<div class="hub-tags">
+						<span class="hub-tag">#부트캠프</span>
+						<span class="hub-tag">#옵시디언</span>
+						<span class="hub-tag">#LLMWiki</span>
+						<span class="hub-tag">#AI에이전트</span>
+					</div>
+				</a>
+				<a class="hub-card" data-phases="[{&quot;until&quot;: &quot;2026-11-12&quot;, &quot;ko&quot;: &quot;사전 예약 중 · 11.13 1차 공개&quot;, &quot;en&quot;: &quot;Pre-order open · Part 1 releases Nov 13&quot;}, {&quot;until&quot;: &quot;2027-01-21&quot;, &quot;ko&quot;: &quot;순차 공개 중 · 2027.1.22 완결&quot;, &quot;en&quot;: &quot;Releasing in parts · complete Jan 22, 2027&quot;}]" href="https://fastcampus.co.kr/biz_online_researchWiki" target="_blank" rel="noopener">
+					<div class="domain">fastcampus.co.kr/biz_online_researchWiki</div>
+					<p class="hub-when">사전 예약 중 · 11.13 1차 공개</p>
+					<h4>패스트캠퍼스 · 연구자 지식 관리</h4>
+					<p class="hub-desc">온라인 강의. 연구용 옵시디언 설계부터 연구 WIKI, 지식 관리 에이전트까지.</p>
+					<div class="hub-tags">
+						<span class="hub-tag">#패스트캠퍼스</span>
+						<span class="hub-tag">#연구자</span>
+						<span class="hub-tag">#연구WIKI</span>
+						<span class="hub-tag">#에이전트</span>
+					</div>
+				</a>
+			</div>
+		</div>
 		<div class="hub-group reveal" id="hub-start">
 			<h3>Start Here · 생태계 입구</h3>
 			<div class="hub-grid">
@@ -1344,6 +1379,17 @@ footer .wrap { display: grid; grid-template-columns: 1fr auto; gap: 40px; align-
 						<span class="hub-tag">#페르소나</span>
 						<span class="hub-tag">#아키텍처</span>
 						<span class="hub-tag">#9Yohan</span>
+					</div>
+				</a>
+				<a class="hub-card" href="https://bio.cmdspace.work/agents" target="_blank" rel="noopener">
+					<div class="domain">bio.cmdspace.work/agents</div>
+					<h4>에이전트와 하네스</h4>
+					<p class="hub-desc">Zotero 원문 연결부터 하네스, 9요한 전문 에이전트, 스킬 120여 개, 정기 작업 16개까지. 구조와 규모, 대표작.</p>
+					<div class="hub-tags">
+						<span class="hub-tag">#에이전트</span>
+						<span class="hub-tag">#하네스</span>
+						<span class="hub-tag">#Zotero</span>
+						<span class="hub-tag">#9요한</span>
 					</div>
 				</a>
 				<a class="hub-card" href="https://jev.cmdspace.work" target="_blank" rel="noopener">
@@ -1694,6 +1740,27 @@ document.getElementById('theme-toggle').addEventListener('click', () => {
 	localStorage.setItem('cmds-theme', next);
 	renderThemeIcon();
 });
+
+// ───── Timed hub group (enrollment windows, KST) ─────
+(function () {
+	const group = document.querySelector('.hub-group.hub-timed');
+	if (!group) return;
+	const today = new Date(Date.now() + 9 * 3600 * 1000).toISOString().slice(0, 10);
+	let shown = 0;
+	group.querySelectorAll('.hub-card[data-phases]').forEach(card => {
+		let phases = [];
+		try { phases = JSON.parse(card.getAttribute('data-phases') || '[]'); } catch (e) {}
+		const phase = phases.find(p => today <= p.until);
+		card.hidden = !phase;
+		if (!phase) return;
+		shown += 1;
+		const when = card.querySelector('.hub-when');
+		if (when) when.textContent = phase.ko;
+	});
+	group.hidden = shown === 0;
+	const chip = document.getElementById('hub-nav-' + group.id.replace('hub-', ''));
+	if (chip) chip.hidden = shown === 0;
+})();
 
 // ───── Reveal on scroll ─────
 const io = new IntersectionObserver((entries) => {

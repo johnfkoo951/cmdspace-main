@@ -12,6 +12,11 @@
 
 - [CMDSPACE 랜딩](https://cmdspace.work): 서비스·활동 이력·공개 서비스 허브
 
+### Now · 지금 열려 있는 강의
+
+- [CMDS Bootcamp 1기](https://landing.cmdspace.kr/cmds-bootcamp-2026): 옵시디언부터 PKM, LLM Wiki, AI 에이전트 워크플로우까지 4과정. 온라인과 오프라인(영등포). (기간 한정, 2026-11-07까지)
+- [패스트캠퍼스 · 연구자 지식 관리](https://fastcampus.co.kr/biz_online_researchWiki): 온라인 강의. 연구용 옵시디언 설계부터 연구 WIKI, 지식 관리 에이전트까지. (기간 한정, 2027-01-21까지)
+
 ### Start Here · 생태계 입구
 
 - [CMDSPACE Brain](https://brain.cmdspace.work): 세컨드브레인·LLM Wiki와 CMDSPACE 지식관리 생태계를 처음 만나는 분을 위한 안내 허브.
@@ -25,6 +30,7 @@
 - [AKM Index](https://akm.cmdspace.work): 에이전틱 지식관리 성숙도를 재는 공개 루브릭 — 5기둥 · 25기준 자가평가와 제출 결과 보드.
 - [Vault Map](https://vault-map.cmdspace.work): 메인 볼트·LLM Wiki·글로벌 설정의 관계와 룰·명령·스킬·에이전트를 설명하는 시스템 지도.
 - [9Yohan Constellation](https://9yohan.cmdspace.work): 9명의 역사적 요한이 CMDS Division과 매핑된 멀티 에이전트 아키텍처.
+- [에이전트와 하네스](https://bio.cmdspace.work/agents): Zotero 원문 연결부터 하네스, 9요한 전문 에이전트, 스킬 120여 개, 정기 작업 16개까지. 구조와 규모, 대표작.
 - [Jev × CMDS 실측 기록](https://jev.cmdspace.work): 글을 쓰지 않고 판단만 하는 모델 Jev를 1만+ 노트 볼트의 입력·검색에 붙여 잰 기록. 제안은 Jev가, 실행은 코드와 사람이.
 - [구요한의 독서와 지식지도](https://reading.cmdspace.work): 다산의 지식 편집, 감정수업48감정, 개인 기록의 제목과 연결을 탐색하는 상시 지식자산.
 

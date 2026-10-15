@@ -121,4 +121,5 @@ Excluded from the hub per existing policy:
 - Never add a domain just because it responds: exclude customer pages, noindex material, research-participant forms, and individual shared notes.
 - Alias pairs: `course` → `showcloud`, `files` → `system`. Keep one representative card; aliases remain active.
 - 2026-10-06: added `jev` (Knowledge) and `labs` (Talks). `labs` is noindex but was explicitly approved for the hub and bio; it is removed from `EXCLUDED` in `scripts/sync-hub.py`.
+- 2026-10-15: added a timed group `now` ("지금 열려 있는 강의": CMDS Bootcamp 1기, FastCampus course) and `bio.cmdspace.work/agents` (Knowledge). `sync-hub.py` now accepts `path` on cmdspace.work hosts, and in `"timed": true` groups the external hosts in `TIMED_EXTERNAL` plus per-link `phases` [{until, ko, en}]. Timed links are not counted; the page picks the phase by KST date and hides cards, the group and its nav chip after the last `until`.
 - 2026-09-12: 30 reviewed links in 6 groups. Added Brain, Apps, Deck, AI 백일장, CmdSync, CMDS Share, and Mobile Command Center. Updated profile education and KIRD title in llms.txt.

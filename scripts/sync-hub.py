@@ -21,31 +21,62 @@ else:
         raise SystemExit('No JSON block in the vault master')
     data = json.loads(match.group(1))
 
-seen = set()
+# Timed groups ("timed": true) hold enrollment-window programs: they may point to these external hosts,
+# carry "phases" [{until, ko, en}], are not counted as public links, and the page hides them after the last until (KST).
+TIMED_EXTERNAL = {'landing.cmdspace.kr', 'fastcampus.co.kr'}  # 2026-10-15: CMDS Bootcamp landing, FastCampus course page
+
+
+def href_of(link):
+    return 'https://' + link['host'] + link.get('path', '')
+
+
+def label_of(link):
+    return link['host'] + link.get('path', '')
+
+
+seen, counted = set(), 0
 for group in data['groups']:
     if not re.fullmatch(r'[a-z-]+', group['id']):
         raise SystemExit('Invalid group ID')
+    timed = group.get('timed', False)
     for link in group['links']:
-        host = link['host']
-        if not re.fullmatch(r'[a-z0-9-]+\.cmdspace\.work', host) or host.split('.')[0] in EXCLUDED or host in seen:
-            raise SystemExit('Excluded, duplicate, or invalid public host: ' + host)
-        seen.add(host)
+        host, path = link['host'], link.get('path', '')
+        own = re.fullmatch(r'[a-z0-9-]+\.cmdspace\.work', host) and host.split('.')[0] not in EXCLUDED
+        if not (own or (timed and host in TIMED_EXTERNAL)) or (path and not re.fullmatch(r'/[A-Za-z0-9_/-]+', path)):
+            raise SystemExit('Excluded or invalid public link: ' + label_of(link))
+        if href_of(link) in seen:
+            raise SystemExit('Duplicate public link: ' + label_of(link))
+        if timed:
+            phases = link.get('phases') or []
+            if not phases or any(not re.fullmatch(r'\d{4}-\d{2}-\d{2}', ph['until']) or not ph.get('ko') or not ph.get('en') for ph in phases):
+                raise SystemExit('Timed link needs phases [{until, ko, en}]: ' + label_of(link))
+        else:
+            counted += 1
+        seen.add(href_of(link))
 esc = html.escape
 lines = ['<!-- HUB -->', '<section id="hub" style="border-bottom: none;">', '\t<div class="wrap">',
          '\t\t<div class="section-head reveal">', '\t\t\t<div class="kicker">Ecosystem</div>',
          '\t\t\t<h2><span class="cmd accent-word">cmdspace.work</span> 서비스 허브</h2>',
          '\t\t\t<p>처음이라면 Brain에서 시작하고, 도구는 Apps에서 찾아보세요. 공개 자료를 용도별로 정리했습니다.</p>',
-         '\t\t\t<p>공개 링크 ' + str(len(seen)) + '개 · 확인 ' + esc(data['checkedAt']) + ' · 고객 전용·내부 자료 제외</p>',
+         '\t\t\t<p>공개 링크 ' + str(counted) + '개 · 확인 ' + esc(data['checkedAt']) + ' · 고객 전용·내부 자료 제외</p>',
          '\t\t</div>', '\t\t<nav class="hub-nav" aria-label="서비스 허브 분류">']
 for group in data['groups']:
-    lines.append('\t\t\t<a class="chip" href="#hub-' + group['id'] + '">' + esc(group['title'].split(' · ')[-1]) + '</a>')
+    nav_id = ' id="hub-nav-' + group['id'] + '"' if group.get('timed') else ''
+    lines.append('\t\t\t<a class="chip"' + nav_id + ' href="#hub-' + group['id'] + '">' + esc(group['title'].split(' · ')[-1]) + '</a>')
 lines.append('\t\t</nav>')
 for group in data['groups']:
-    lines += ['\t\t<div class="hub-group reveal" id="hub-' + group['id'] + '">', '\t\t\t<h3>' + esc(group['title']) + '</h3>', '\t\t\t<div class="hub-grid">']
+    timed = group.get('timed', False)
+    lines += ['\t\t<div class="hub-group reveal' + (' hub-timed' if timed else '') + '" id="hub-' + group['id'] + '">', '\t\t\t<h3>' + esc(group['title']) + '</h3>']
+    if group.get('description'):
+        lines.append('\t\t\t<p class="hub-group-desc">' + esc(group['description']) + '</p>')
+    lines.append('\t\t\t<div class="hub-grid">')
     for link in group['links']:
-        lines += ['\t\t\t\t<a class="hub-card" href="https://' + esc(link['host']) + '" target="_blank" rel="noopener">',
-                  '\t\t\t\t\t<div class="domain">' + esc(link['host']) + '</div>',
-                  '\t\t\t\t\t<h4>' + esc(link['title']) + '</h4>',
+        phases = ' data-phases="' + esc(json.dumps(link['phases'], ensure_ascii=False)) + '"' if timed else ''
+        lines += ['\t\t\t\t<a class="hub-card"' + phases + ' href="' + esc(href_of(link)) + '" target="_blank" rel="noopener">',
+                  '\t\t\t\t\t<div class="domain">' + esc(label_of(link)) + '</div>']
+        if timed:
+            lines.append('\t\t\t\t\t<p class="hub-when">' + esc(link['phases'][0]['ko']) + '</p>')
+        lines += ['\t\t\t\t\t<h4>' + esc(link['title']) + '</h4>',
                   '\t\t\t\t\t<p class="hub-desc">' + esc(link['description']) + '</p>', '\t\t\t\t\t<div class="hub-tags">']
         lines += ['\t\t\t\t\t\t<span class="hub-tag">' + esc(tag) + '</span>' for tag in link['tags']]
         lines += ['\t\t\t\t\t</div>', '\t\t\t\t</a>']
@@ -63,7 +94,8 @@ start = search.index('## 주요 페이지')
 end = search.index('## 표기', start)
 section = '## 주요 페이지\n\n- [CMDSPACE 랜딩](https://cmdspace.work): 서비스·활동 이력·공개 서비스 허브\n\n'
 section += '\n\n'.join('### ' + group['title'] + '\n\n' + '\n'.join(
-    '- [' + link['title'] + '](https://' + link['host'] + '): ' + link['description']
+    '- [' + link['title'] + '](' + href_of(link) + '): ' + link['description']
+    + (' (기간 한정, ' + link['phases'][-1]['until'] + '까지)' if group.get('timed') else '')
     for link in group['links']) for group in data['groups'])
 search_file.write_text(search[:start] + section + '\n\n' + search[end:])
-print(f'Rendered {len(seen)} reviewed links in {len(data["groups"])} groups')
+print(f'Rendered {counted} reviewed links (+{len(seen) - counted} timed) in {len(data["groups"])} groups')
