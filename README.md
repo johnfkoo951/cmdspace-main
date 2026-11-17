@@ -4,8 +4,9 @@ Apex landing for **CMDSPACE**, an enterprise AX and context-architecture profess
 
 1. Presents the `Discover → Diagnose → Pilot → Scale → Operate` engagement model
 2. Introduces Yohan Koo's enterprise AX/context-architect role and verified activity record
-3. Publishes sanitized company and AX portfolio PDFs
-4. Hubs public `*.cmdspace.work` properties
+3. Lists programs by audience (`#courses`): who can take which course, from specialised build topics to general ones
+4. Publishes sanitized company, AX portfolio and course proposal PDFs
+5. Hubs public `*.cmdspace.work` properties
 
 Data is loaded client-side from `./data/activities.csv` and updated **weekly** from the vault.
 
@@ -16,6 +17,7 @@ cmdspace-main/
 ├── index.html                 # single-file landing
 ├── data/
 │   ├── activities.csv         # 구요한 이력 (weekly-updated)
+│   ├── programs.json          # audience → program catalog, public fields only (generated)
 │   └── gallery.json           # gallery manifest (auto-generated)
 ├── assets/
 │   ├── downloads/              # sanitized public PDFs
@@ -27,6 +29,9 @@ cmdspace-main/
 │   └── gallery/               # lecture/event photos (.jpg/.png)
 ├── scripts/
 │   ├── build-og.sh            # regenerate OG image
+│   ├── build-pdf.sh           # rebuild the three public PDFs from docs/*.md
+│   ├── sync-hub.py            # vault hub-links.md → hub section
+│   ├── sync-programs.py       # vault programs-by-audience.md → #courses, proposal tables, llms.txt
 │   └── build-gallery.sh       # rescan gallery + regenerate manifest
 ├── sync-activities.sh         # Airtable → data/activities.csv sync
 └── README.md
@@ -113,6 +118,16 @@ Excluded from the hub per existing policy:
 `docs/`는 PDF 생성용 원문이며 Vercel 배포에서 제외됩니다. 공개 산출물은 `assets/downloads/`의 비식별 PDF만 사용합니다.
 
 이 레포에서 위 정보를 변경하면 **cmds-bio 도 함께 갱신**해야 합니다. cmds-bio 쪽 변경 기록은 해당 레포의 `docs/06-worklog.md` 를 참조하세요. 반대 방향(이 레포로의 참조)은 cmds-bio README 에 반영되어 있습니다.
+
+## Programs by audience (`#courses`)
+
+- The vault note `70. Outputs/74. Projects/cmdspace-landing/programs-by-audience.md` is the master: 9 audiences (each with an opening question and an ordered program list) and 31 programs (depth 범용/핵심/특화, kind, format, coverage, deliverables, public evidence). `- 내부근거:` lines never leave the vault.
+- `python3 scripts/sync-programs.py` validates the master and regenerates five surfaces: `data/programs.json`, the block between `<!-- COURSES:BEGIN -->` and `<!-- COURSES:END -->` in `index.html`, the program tables in `docs/cmdspace-course-proposal.md`, the at-a-glance table in `docs/cmdspace-brochure.md` and `docs/yohan-ax-portfolio.md`, and the program section of `llms.txt`. `--check` validates only; `--data` rebuilds from the checked-in JSON.
+- Never edit the generated blocks by hand. The section heading, the CTA row, the CSS and the filter script around the block are hand-written in `index.html`.
+- Deep link: `https://cmdspace.work/?for=<key>#courses` opens with that audience tab selected (`ax`, `ceo`, `exec`, `lead`, `staff`, `build`, `research`, `edu`, `open`, `all`).
+- `./scripts/build-pdf.sh` rebuilds the three PDFs. md-to-pdf prints inline HTML as text, so the script strips the `<!-- ... -->` generator markers into a temporary copy first, and generated tables contain no `<br>`. In the docs, put a table directly under its heading (notes after it): a paragraph in between lets the heading strand at the bottom of a page.
+- Cards carry `.reveal` individually. Do not put `.reveal` on `#course-grid`: with all 31 cards it is taller than 12 phone viewports, so the reveal observer (8% of the element) never fires and the grid stays invisible.
+- 2026-11-17: section added with 31 programs; topics went from 8 to 10 (사내 에이전트, 하네스 구축 added); course proposal PDF v1.0 added; AX portfolio and brochure refreshed to v4.0 (511 records).
 
 ## Public hub maintenance
 
