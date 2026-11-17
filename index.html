@@ -213,6 +213,20 @@ h1 .cmd { font-family: var(--font-mono); font-weight: 600; }
 }
 .edu-note a.accent-word { text-decoration: none; border-bottom: 1px solid color-mix(in srgb, var(--accent) 40%, transparent); }
 .edu-note a.accent-word:hover { border-bottom-color: var(--accent); }
+.edu-note[hidden] { display: none; }
+.edu-note .hub-when-inline { color: var(--fg); font-weight: 600; }
+.hub-cta {
+	display: inline-flex; align-items: center; gap: 6px;
+	margin-top: 14px; padding: 7px 14px; border-radius: 999px;
+	background: var(--accent); color: var(--accent-on);
+	font-size: 13px; font-weight: 700; line-height: 1.2;
+	transition: background 0.15s;
+}
+.hub-cta svg { width: 13px; height: 13px; }
+.hub-cta[hidden] { display: none; }
+.edu-note .hub-cta { margin-top: 0; }
+.hub-card:hover .hub-cta, a.hub-cta:hover { background: var(--cmds-green-hover); }
+[data-theme="dark"] .hub-card:hover .hub-cta, [data-theme="dark"] a.hub-cta:hover { background: var(--cmds-pink-light); }
 
 /* Hero stat strip */
 .hero-stats {
@@ -862,6 +876,11 @@ footer .wrap { display: grid; grid-template-columns: 1fr auto; gap: 40px; align-
 			<span class="edu-badge">교육·코호트</span>
 			공개 강의와 코호트는 <a class="accent-word" href="https://cmdspace.kr" target="_blank" rel="noopener"><strong>cmdspace.kr</strong></a>에서 운영합니다.
 		</p>
+		<p class="edu-note reveal" data-phases-ref="now-fastcampus">
+			<span class="edu-badge">신규 강의</span>
+			<span>패스트캠퍼스 「앞서가는 연구자의 지식 관리 시스템」 · <span class="hub-when-inline">사전 예약 중 · 11.13 1차 공개</span></span>
+			<a class="hub-cta" href="https://fastcampus.co.kr/biz_online_researchWiki" target="_blank" rel="noopener"><span class="cta-label">사전 예약하기</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+		</p>
 
 		<div class="hero-stats reveal">
 			<div class="hero-stat"><div class="label">누적 활동</div><div class="value" id="stat-total">—</div></div>
@@ -910,7 +929,7 @@ footer .wrap { display: grid; grid-template-columns: 1fr auto; gap: 40px; align-
 		</div>
 		<div class="program-grid">
 			<div class="program-step reveal"><span class="step-label">01 Discover</span><h3>문제 발견</h3><p>임원 교육·코칭으로 우선 질문과 내부 스폰서를 확인합니다.</p></div>
-			<div class="program-step reveal"><span class="step-label">02 Diagnose</span><h3>기준선 진단</h3><p>지식 원천·핵심 업무·보안 조건·성공 기준을 정의합니다.</p></div>
+			<div class="program-step reveal"><span class="step-label">02 Diagnose</span><h3>기준선 진단</h3><p>AKM 루브릭으로 지식·업무·AI 준비도의 기준선을 잡고, 보안 조건과 성공 기준을 정의합니다.</p></div>
 			<div class="program-step reveal"><span class="step-label">03 Pilot</span><h3>부서 파일럿</h3><p>한 부서·한 업무에 Context Pack·LLM Wiki·AI 흐름을 구축합니다.</p></div>
 			<div class="program-step reveal"><span class="step-label">04 Scale</span><h3>조직 확산</h3><p>수준별 핸즈온·관리자 양성·전달체계로 반복 가능성을 만듭니다.</p></div>
 			<div class="program-step reveal"><span class="step-label">05 Operate</span><h3>운영 정착</h3><p>책임·갱신·품질·보안·분기 감사를 운영 리듬으로 만듭니다.</p></div>
@@ -933,56 +952,56 @@ footer .wrap { display: grid; grid-template-columns: 1fr auto; gap: 40px; align-
 		<div class="section-head reveal">
 			<div class="kicker">What we teach</div>
 			<h2>다루는 <span class="accent-word">교육 주제</span></h2>
-			<p>강의 제목에는 단어로 압축되지만, 실제 다루는 주제는 훨씬 넓습니다. 청중(임원·연구자·교사·학생·실무자)별로 같은 기술을 서로 다른 층위로 풀어냅니다.</p>
+			<p>강의 제목에는 단어로 압축되지만, 실제 다루는 주제는 훨씬 넓습니다. 2026년 강의 자산을 기준으로 여덟 갈래로 정리했고, 청중(임원·연구자·교사·학생·실무자)별로 같은 기술을 서로 다른 층위로 풀어냅니다.</p>
 		</div>
 		<div class="topics-grid">
 			<div class="topic-card reveal">
 				<div class="topic-num">01</div>
-				<h3>생성형 AI 리터러시</h3>
-				<p>언어모델 원리부터 프롬프트 엔지니어링, 유료 기능 활용, 실무 자동화까지. ChatGPT · Claude · Gemini 를 목적에 맞게 조합해 쓰는 감각을 기릅니다.</p>
-				<div class="topic-audience">→ 일반 실무자 · 임원 · 교사 · 학생 · 학부모</div>
+				<h3>AI 업무 활용 · 프롬프트에서 하네스까지</h3>
+				<p>AI를 잘 쓰는 사람은 묻지 않고 맡기고, 매번 설명하지 않고, 기준을 줍니다. 프롬프트 → 컨텍스트 → 하네스 → 루프 네 층으로 ChatGPT · Claude · Gemini를 실제 업무에 붙이고, 클라우드와 로컬 중 어디에 맡길지 보안 기준까지 함께 정합니다.</p>
+				<div class="topic-audience">→ 기업·공공기관 실무자 · 전 직원 교육 · 일반 수강생</div>
 			</div>
 			<div class="topic-card reveal">
 				<div class="topic-num">02</div>
-				<h3>연구자용 AI</h3>
-				<p>논문 탐색·읽기·쓰기·인용, AI로 데이터 정제와 분석 자동화, 나만의 연구 보조 GPT 만들기. 연구 프로세스 전 단계를 LLM과 함께 재설계합니다.</p>
-				<div class="topic-audience">→ 대학원생 · 교수 · 연구소 · 기관 연구팀</div>
+				<h3>임원 AX · AI를 지휘하는 리더의 언어</h3>
+				<p>AX는 도구 도입이 아니라 업무 재설계입니다. 에이전트의 다섯 요소(모델·도구·지식·룰·루프), AI 과제를 결재하는 여섯 질문, 위임과 판단 포기의 경계, 거버넌스와 데이터 주권을 임원의 언어로 다루고 1:1 코칭으로 잇습니다.</p>
+				<div class="topic-audience">→ CEO · 임원 · 부문장 · 대기업·금융·공공기관 리더</div>
 			</div>
 			<div class="topic-card reveal">
 				<div class="topic-num">03</div>
-				<h3>개인지식관리(PKM) · 세컨드브레인</h3>
-				<p>티아고 포르테의 BASB, 루만의 제텔카스텐, kepano·닉 마일로의 LYT를 한국 실무 맥락에 맞게 재구성한 CMDS 프로세스. 옵시디언 기초부터 고급 플러그인·그래프 활용까지.</p>
-				<div class="topic-audience">→ 지식노동자 · 연구자 · 학생 · 콘텐츠 크리에이터</div>
+				<h3>AI가 읽는 조직 · AI-ready 데이터</h3>
+				<p>데이터가 없는 게 아니라 AI가 읽지 못하는 형태로 쌓여 있을 뿐입니다. 보고용(PPT·PDF)·교환용(마크다운·JSON)·원문 세 층과 메타데이터 일곱 칸으로 부서 지식을 정본으로 만들고, NotebookLM 같은 근거형 AI를 기관 문서에 들이는 기준을 세웁니다.</p>
+				<div class="topic-audience">→ DX·AI 조직 · 지식·데이터 담당 · 공공기관 · 임원</div>
 			</div>
 			<div class="topic-card reveal">
 				<div class="topic-num">04</div>
-				<h3>AI 에이전트·멀티에이전트</h3>
-				<p>Claude Code · OpenClaw 기반 에이전트 구축, MCP로 외부 도구 연결, Obsidian 볼트를 에이전트의 장기 기억으로 활용. 9Yohan 멀티에이전트 오케스트레이션 사례.</p>
-				<div class="topic-audience">→ 개발자 · Power User · 프로덕트 팀</div>
+				<h3>연구자의 세컨드 브레인</h3>
+				<p>문헌 수집부터 읽기·인용·집필까지 연구 과정을 AI와 다시 짭니다. Zotero 서재를 에이전트가 함께 읽게 하고, pandoc 인용으로 Word 원고까지 잇고, 연구 데이터 분석과 보고서 작성은 근거를 남겨 검증합니다.</p>
+				<div class="topic-audience">→ 대학원생 · 교수 · 정부출연연구기관 · 병원 연구팀</div>
 			</div>
 			<div class="topic-card reveal">
 				<div class="topic-num">05</div>
-				<h3>CEO · 리더십 AX 교육</h3>
-				<p>그룹 임원·회장단·CEO 대상 AX 교육과 1:1 코칭. AI 시대에 조직과 본인의 의사결정을 어떻게 재설계할 것인가.</p>
-				<div class="topic-audience">→ 사장 · 부사장 · 임원 · 대기업/공공기관 리더</div>
+				<h3>옵시디언 PKM · 에이전트를 위한 볼트 설계</h3>
+				<p>BASB·제텔카스텐·LYT를 한국 실무에 맞게 재구성한 CMDS 프로세스. 분류 체계, 프로퍼티 스키마, Bases, 위키링크로 개인 지식을 사람과 AI 에이전트가 함께 읽고 쓰는 구조로 만듭니다. Obsidian 101 기초부터 월간 옵시디언 심화까지.</p>
+				<div class="topic-audience">→ 지식노동자 · 연구자 · 학생 · 콘텐츠 크리에이터</div>
 			</div>
 			<div class="topic-card reveal">
 				<div class="topic-num">06</div>
-				<h3>데이터 분석·시각화</h3>
-				<p>기초·고급 통계, 회귀·ANOVA·SEM, 머신러닝 지도·비지도학습, 토픽 모델링. Tableau로 패널데이터 스토리텔링, ESG·HR Analytics 실무 사례.</p>
-				<div class="topic-audience">→ 연구자 · HR · 마케팅 · 정책 담당자</div>
+				<h3>LLM Wiki · 쌓일수록 쓸모 있는 지식 베이스</h3>
+				<p>Karpathy의 LLM Wiki 패턴을 실무로 옮깁니다. 원천 자료를 AI가 위키 카드로 소화하고(Ingest), 묻고(Query), 점검하며(Lint), qmd 인덱스로 수천 개 노트를 찾게 합니다. 모은 수가 아니라 소화한 수로 세는 개인·팀 지식 베이스.</p>
+				<div class="topic-audience">→ 연구자 · 지식노동자 · 팀 리더 · 사내 지식관리 담당</div>
 			</div>
 			<div class="topic-card reveal">
 				<div class="topic-num">07</div>
-				<h3>교수법·커리큘럼 설계</h3>
-				<p>중고등 · 대학 · 기업 · 공공기관 맞춤 학습 경험 설계. 실습 중심 Day 1~3 워크샵, 시리즈 과정, 장기 코칭 프로그램 기획.</p>
-				<div class="topic-audience">→ 교사 · 교수 · 교육 담당자 · L&amp;D 팀</div>
+				<h3>AI 에이전트 · 내 도구 직접 만들기</h3>
+				<p>Claude Code · Codex에 일을 맡기고 MCP와 스킬로 도구를 연결합니다. 견적 계산기·업무 앱·웹페이지를 사서 쓰지 않고 직접 만들어 배포하며, 9Yohan 멀티에이전트 운영 사례와 AKM Index로 지식·에이전트 운영 수준을 점검합니다.</p>
+				<div class="topic-audience">→ 개발자 · Power User · 반복 업무를 덜어 내려는 실무자</div>
 			</div>
 			<div class="topic-card reveal">
 				<div class="topic-num">08</div>
-				<h3>노코드·자동화</h3>
-				<p>n8n 워크플로우로 일상 자동화, Google Sheet + GPT API 연동, 교육·HR·마케팅 자동화 설계. 코드 없이 일하는 방식을 바꾸는 레시피. ---</p>
-				<div class="topic-audience">→ 실무자 · 교육자 · 기획자</div>
+				<h3>교육자를 위한 AI · 수업과 과정 설계</h3>
+				<p>AI를 쓴 과제를 결과물보다 대화 기록과 구술로 평가하는 법, 기출문제와 교육과정으로 수업을 역설계하는 법까지. 중고등·대학·기업·공공기관 맞춤 실습 워크숍과 코호트 과정을 설계합니다.</p>
+				<div class="topic-audience">→ 교사 · 교수 · 교육 담당자 · L&amp;D 팀</div>
 			</div>
 		</div>
 	</div>
@@ -998,65 +1017,67 @@ footer .wrap { display: grid; grid-template-columns: 1fr auto; gap: 40px; align-
 		</div>
 		<div class="tools-groups">
 			<div class="tools-group reveal">
-				<div class="tools-group-head"><h3>LLM · AI Agent</h3><span class="sub">대화·추론·에이전트</span></div>
+				<div class="tools-group-head"><h3>AI 모델 · 에이전트</h3><span class="sub">대화·추론·에이전트 실행</span></div>
 				<div class="tools-pills">
-					<span class="tools-pill">ChatGPT <span class="badge">●</span></span>
 					<span class="tools-pill">Claude <span class="badge">●</span></span>
 					<span class="tools-pill">Claude Code <span class="badge">●</span></span>
-					<span class="tools-pill">Claude Agent SDK</span>
+					<span class="tools-pill">Codex <span class="badge">●</span></span>
+					<span class="tools-pill">ChatGPT <span class="badge">●</span></span>
 					<span class="tools-pill">Gemini</span>
-					<span class="tools-pill">OpenClaw <span class="badge">●</span></span>
-					<span class="tools-pill">Perplexity</span>
-					<span class="tools-pill">Hermes</span>
-					<span class="tools-pill">MCP</span>
+					<span class="tools-pill">Grok</span>
+					<span class="tools-pill">Microsoft 365 Copilot</span>
+					<span class="tools-pill">Google AI Studio</span>
+					<span class="tools-pill">Antigravity</span>
+					<span class="tools-pill">OpenClaw</span>
+					<span class="tools-pill">MCP <span class="badge">●</span></span>
+					<span class="tools-pill">Agent Skills</span>
 				</div>
 			</div>
 			<div class="tools-group reveal">
-				<div class="tools-group-head"><h3>Personal Knowledge Management</h3><span class="sub">메모·연결·저장</span></div>
+				<div class="tools-group-head"><h3>지식 베이스 · PKM</h3><span class="sub">기록·연결·AI가 읽는 정본</span></div>
 				<div class="tools-pills">
 					<span class="tools-pill">Obsidian <span class="badge">●</span></span>
+					<span class="tools-pill">Obsidian Bases <span class="badge">●</span></span>
+					<span class="tools-pill">qmd <span class="badge">●</span></span>
+					<span class="tools-pill">Obsidian Web Clipper</span>
+					<span class="tools-pill">Hookmark</span>
+					<span class="tools-pill">Mermaid</span>
 					<span class="tools-pill">Notion</span>
-					<span class="tools-pill">DevonThink</span>
-					<span class="tools-pill">Excalidraw</span>
-					<span class="tools-pill">Zotero</span>
-					<span class="tools-pill">Bookends</span>
 				</div>
 			</div>
 			<div class="tools-group reveal">
-				<div class="tools-group-head"><h3>연구·학습</h3><span class="sub">논문·문헌·분석</span></div>
+				<div class="tools-group-head"><h3>연구 · 문헌</h3><span class="sub">수집·인용·집필·분석</span></div>
 				<div class="tools-pills">
-					<span class="tools-pill">Elicit</span>
-					<span class="tools-pill">SciSpace</span>
-					<span class="tools-pill">ResearchRabbit</span>
+					<span class="tools-pill">Zotero <span class="badge">●</span></span>
+					<span class="tools-pill">Better BibTeX</span>
+					<span class="tools-pill">pandoc</span>
+					<span class="tools-pill">NotebookLM (Gemini Notebook)</span>
 					<span class="tools-pill">Semantic Scholar</span>
-					<span class="tools-pill">Publish or Perish</span>
+					<span class="tools-pill">OpenAlex</span>
 					<span class="tools-pill">Python / Colab</span>
-					<span class="tools-pill">R</span>
-					<span class="tools-pill">Tableau</span>
 				</div>
 			</div>
 			<div class="tools-group reveal">
-				<div class="tools-group-head"><h3>이미지 · 음성 · 영상 AI</h3><span class="sub">멀티모달 생성</span></div>
+				<div class="tools-group-head"><h3>음성 · 영상 · 이미지</h3><span class="sub">기록·생성·라이브러리</span></div>
 				<div class="tools-pills">
-					<span class="tools-pill">Midjourney</span>
-					<span class="tools-pill">Stable Diffusion</span>
-					<span class="tools-pill">DALL-E</span>
-					<span class="tools-pill">Sora</span>
 					<span class="tools-pill">ElevenLabs <span class="badge">●</span></span>
 					<span class="tools-pill">HeyGen</span>
-					<span class="tools-pill">Whisper</span>
+					<span class="tools-pill">Plaud</span>
+					<span class="tools-pill">Midjourney</span>
+					<span class="tools-pill">Suno</span>
+					<span class="tools-pill">Eagle</span>
 				</div>
 			</div>
 			<div class="tools-group reveal">
-				<div class="tools-group-head"><h3>자동화 · 개발</h3><span class="sub">워크플로 · 퍼블리시</span></div>
+				<div class="tools-group-head"><h3>개발 · 배포 · 운영</h3><span class="sub">내 도구를 만들고 내보내기</span></div>
 				<div class="tools-pills">
-					<span class="tools-pill">n8n <span class="badge">●</span></span>
-					<span class="tools-pill">Make.com</span>
-					<span class="tools-pill">Cursor</span>
 					<span class="tools-pill">Vercel <span class="badge">●</span></span>
+					<span class="tools-pill">GitHub <span class="badge">●</span></span>
 					<span class="tools-pill">Cloudflare</span>
-					<span class="tools-pill">Webflow</span>
-					<span class="tools-pill">Raycast</span>
+					<span class="tools-pill">Supabase</span>
+					<span class="tools-pill">Tailscale</span>
+					<span class="tools-pill">cmux</span>
+					<span class="tools-pill">OpenRig</span>
 				</div>
 			</div>
 		</div>
@@ -1116,16 +1137,17 @@ footer .wrap { display: grid; grid-template-columns: 1fr auto; gap: 40px; align-
 					<span class="accent-word">그룹 전체 임원 855명 대상 프로그램</span>, 회장단·CEO 15명 프로그램, 약 2,500명 온·오프라인 라이브 AI 시연을 설계·운영했습니다. 2025년 현행 이력 DB에는 Lecture 포함 기록 158건이 있습니다.
 				</p>
 				<p>
-					1만여 개 지식 파일을 운영하며 <span class="accent-word">옵시디언 PKM</span> · <span class="accent-word">System Files</span> · <span class="accent-word">LLM Wiki</span> · <span class="accent-word">9Yohan</span>을 기업 AI 지식운영의 방법론·내부 증거·R&amp;D 자산으로 발전시킵니다.
+					1만여 개 지식 파일을 운영하며 <span class="accent-word">옵시디언 PKM</span> · <span class="accent-word">System Files</span> · <span class="accent-word">LLM Wiki</span> · <span class="accent-word">AKM Index</span> · <span class="accent-word">9Yohan</span>을 기업 AI 지식운영의 방법론·내부 증거·R&amp;D 자산으로 발전시킵니다.
 				</p>
 				<p>한양대학교 교육공학 박사수료·응용물리학 석사 · 지피터스·더배러 운영진</p>
 				<div class="tags">
-					<span class="tag">#생성형AI</span>
+					<span class="tag">#AX</span>
+					<span class="tag">#하네스</span>
 					<span class="tag">#지식관리</span>
+					<span class="tag">#LLMWiki</span>
 					<span class="tag">#옵시디언</span>
 					<span class="tag">#ClaudeCode</span>
 					<span class="tag">#ContextArchitecture</span>
-					<span class="tag">#KnowledgeOperations</span>
 				</div>
 				<div class="profile-photos">
 					<div class="profile-thumbs">
@@ -1242,7 +1264,7 @@ footer .wrap { display: grid; grid-template-columns: 1fr auto; gap: 40px; align-
 			<div class="kicker">Ecosystem</div>
 			<h2><span class="cmd accent-word">cmdspace.work</span> 서비스 허브</h2>
 			<p>처음이라면 Brain에서 시작하고, 도구는 Apps에서 찾아보세요. 공개 자료를 용도별로 정리했습니다.</p>
-			<p>공개 링크 34개 · 확인 2026-10-15 · 고객 전용·내부 자료 제외</p>
+			<p>공개 링크 37개 · 확인 2026-11-04 · 고객 전용·내부 자료 제외</p>
 		</div>
 		<nav class="hub-nav" aria-label="서비스 허브 분류">
 			<a class="chip" id="hub-nav-now" href="#hub-now">지금 열려 있는 강의</a>
@@ -1257,7 +1279,7 @@ footer .wrap { display: grid; grid-template-columns: 1fr auto; gap: 40px; align-
 			<h3>Now · 지금 열려 있는 강의</h3>
 			<p class="hub-group-desc">신청·공개 기간이 정해진 강의입니다. 기간이 끝나면 이 목록에서 자동으로 내려갑니다.</p>
 			<div class="hub-grid">
-				<a class="hub-card" data-phases="[{&quot;until&quot;: &quot;2026-10-20&quot;, &quot;ko&quot;: &quot;1기 모집 중 · LLM Wiki 10.21 개강&quot;, &quot;en&quot;: &quot;Cohort 1 open · LLM Wiki starts Oct 21&quot;}, {&quot;until&quot;: &quot;2026-11-04&quot;, &quot;ko&quot;: &quot;1기 모집 중 · Agent Workflow 11.5 개강&quot;, &quot;en&quot;: &quot;Cohort 1 open · Agent Workflow starts Nov 5&quot;}, {&quot;until&quot;: &quot;2026-11-07&quot;, &quot;ko&quot;: &quot;1기 진행 중 · 11.7 마지막 수업&quot;, &quot;en&quot;: &quot;Cohort 1 in progress · final session Nov 7&quot;}]" href="https://landing.cmdspace.kr/cmds-bootcamp-2026" target="_blank" rel="noopener">
+				<a class="hub-card" data-phases="[{&quot;until&quot;: &quot;2026-10-20&quot;, &quot;ko&quot;: &quot;1기 모집 중 · LLM Wiki 10.21 개강&quot;, &quot;en&quot;: &quot;Cohort 1 open · LLM Wiki starts Oct 21&quot;, &quot;cta_ko&quot;: &quot;신청하기&quot;, &quot;cta_en&quot;: &quot;Apply&quot;}, {&quot;until&quot;: &quot;2026-11-04&quot;, &quot;ko&quot;: &quot;1기 모집 중 · Agent Workflow 11.5 개강&quot;, &quot;en&quot;: &quot;Cohort 1 open · Agent Workflow starts Nov 5&quot;, &quot;cta_ko&quot;: &quot;신청하기&quot;, &quot;cta_en&quot;: &quot;Apply&quot;}, {&quot;until&quot;: &quot;2026-11-07&quot;, &quot;ko&quot;: &quot;1기 진행 중 · 11.7 마지막 수업&quot;, &quot;en&quot;: &quot;Cohort 1 in progress · final session Nov 7&quot;}]" href="https://landing.cmdspace.kr/cmds-bootcamp-2026" target="_blank" rel="noopener">
 					<div class="domain">landing.cmdspace.kr/cmds-bootcamp-2026</div>
 					<p class="hub-when">1기 모집 중 · LLM Wiki 10.21 개강</p>
 					<h4>CMDS Bootcamp 1기</h4>
@@ -1268,18 +1290,20 @@ footer .wrap { display: grid; grid-template-columns: 1fr auto; gap: 40px; align-
 						<span class="hub-tag">#LLMWiki</span>
 						<span class="hub-tag">#AI에이전트</span>
 					</div>
+					<span class="hub-cta"><span class="cta-label">신청하기</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
 				</a>
-				<a class="hub-card" data-phases="[{&quot;until&quot;: &quot;2026-11-12&quot;, &quot;ko&quot;: &quot;사전 예약 중 · 11.13 1차 공개&quot;, &quot;en&quot;: &quot;Pre-order open · Part 1 releases Nov 13&quot;}, {&quot;until&quot;: &quot;2027-01-21&quot;, &quot;ko&quot;: &quot;순차 공개 중 · 2027.1.22 완결&quot;, &quot;en&quot;: &quot;Releasing in parts · complete Jan 22, 2027&quot;}]" href="https://fastcampus.co.kr/biz_online_researchWiki" target="_blank" rel="noopener">
+				<a class="hub-card" id="now-fastcampus" data-phases="[{&quot;until&quot;: &quot;2026-11-12&quot;, &quot;ko&quot;: &quot;사전 예약 중 · 11.13 1차 공개&quot;, &quot;en&quot;: &quot;Pre-order open · Part 1 releases Nov 13&quot;, &quot;cta_ko&quot;: &quot;사전 예약하기&quot;, &quot;cta_en&quot;: &quot;Pre-order&quot;}, {&quot;until&quot;: &quot;2027-01-21&quot;, &quot;ko&quot;: &quot;순차 공개 중 · 2027.1.22 완결&quot;, &quot;en&quot;: &quot;Releasing in parts · complete Jan 22, 2027&quot;, &quot;cta_ko&quot;: &quot;수강 신청하기&quot;, &quot;cta_en&quot;: &quot;Enroll&quot;}]" href="https://fastcampus.co.kr/biz_online_researchWiki" target="_blank" rel="noopener">
 					<div class="domain">fastcampus.co.kr/biz_online_researchWiki</div>
 					<p class="hub-when">사전 예약 중 · 11.13 1차 공개</p>
-					<h4>패스트캠퍼스 · 연구자 지식 관리</h4>
-					<p class="hub-desc">온라인 강의. 연구용 옵시디언 설계부터 연구 WIKI, 지식 관리 에이전트까지.</p>
+					<h4>앞서가는 연구자의 지식 관리 시스템</h4>
+					<p class="hub-desc">패스트캠퍼스 신규 온라인 강의. 연구용 옵시디언 설계부터 연구 WIKI, 지식 관리 에이전트까지.</p>
 					<div class="hub-tags">
 						<span class="hub-tag">#패스트캠퍼스</span>
 						<span class="hub-tag">#연구자</span>
 						<span class="hub-tag">#연구WIKI</span>
 						<span class="hub-tag">#에이전트</span>
 					</div>
+					<span class="hub-cta"><span class="cta-label">사전 예약하기</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
 				</a>
 			</div>
 		</div>
@@ -1315,6 +1339,16 @@ footer .wrap { display: grid; grid-template-columns: 1fr auto; gap: 40px; align-
 						<span class="hub-tag">#프로필</span>
 						<span class="hub-tag">#공개링크</span>
 						<span class="hub-tag">#허브</span>
+					</div>
+				</a>
+				<a class="hub-card" href="https://ask.cmdspace.work" target="_blank" rel="noopener">
+					<div class="domain">ask.cmdspace.work</div>
+					<h4>Ask CMDSPACE · 질문 남기기</h4>
+					<p class="hub-desc">구요한에게 무엇이든 질문하세요. 모든 질문을 기록하고, 이미 공개된 자료로 답이 되면 알맞은 곳을 바로 안내합니다.</p>
+					<div class="hub-tags">
+						<span class="hub-tag">#질문</span>
+						<span class="hub-tag">#QnA</span>
+						<span class="hub-tag">#문의</span>
 					</div>
 				</a>
 			</div>
@@ -1487,6 +1521,17 @@ footer .wrap { display: grid; grid-template-columns: 1fr auto; gap: 40px; align-
 						<span class="hub-tag">#2026</span>
 					</div>
 				</a>
+				<a class="hub-card" href="https://models.cmdspace.work" target="_blank" rel="noopener">
+					<div class="domain">models.cmdspace.work</div>
+					<h4>CMDSPACE Models</h4>
+					<p class="hub-desc">Anthropic · OpenAI · Google · xAI · ElevenLabs의 현행 프런티어 API 모델을 가격·컨텍스트·지원 기능으로 정리하고, 실제로 쓰는 자리를 함께 적은 카탈로그.</p>
+					<div class="hub-tags">
+						<span class="hub-tag">#API모델</span>
+						<span class="hub-tag">#가격</span>
+						<span class="hub-tag">#컨텍스트</span>
+						<span class="hub-tag">#카탈로그</span>
+					</div>
+				</a>
 				<a class="hub-card" href="https://openclaw.cmdspace.work" target="_blank" rel="noopener">
 					<div class="domain">openclaw.cmdspace.work</div>
 					<h4>OpenClaw Study Guide</h4>
@@ -1628,6 +1673,17 @@ footer .wrap { display: grid; grid-template-columns: 1fr auto; gap: 40px; align-
 						<span class="hub-tag">#세션</span>
 					</div>
 				</a>
+				<a class="hub-card" href="https://labs.cmdspace.work/generative-art/" target="_blank" rel="noopener">
+					<div class="domain">labs.cmdspace.work/generative-art</div>
+					<h4>Generative Art Lab</h4>
+					<p class="hub-desc">코드로 만드는 미디어 아트 시안 랩. 하이진재즈블렌드 2회 공연 LED 시안을 만들고, 3D 홀 안에서 객석 시점으로 미리 봅니다.</p>
+					<div class="hub-tags">
+						<span class="hub-tag">#미디어아트</span>
+						<span class="hub-tag">#p5js</span>
+						<span class="hub-tag">#Threejs</span>
+						<span class="hub-tag">#LED</span>
+					</div>
+				</a>
 			</div>
 		</div>
 		<div class="hub-group reveal" id="hub-archives">
@@ -1746,6 +1802,18 @@ document.getElementById('theme-toggle').addEventListener('click', () => {
 	const group = document.querySelector('.hub-group.hub-timed');
 	if (!group) return;
 	const today = new Date(Date.now() + 9 * 3600 * 1000).toISOString().slice(0, 10);
+	const currentPhase = el => {
+		let phases = [];
+		try { phases = JSON.parse(el.getAttribute('data-phases') || '[]'); } catch (e) {}
+		return phases.find(p => today <= p.until);
+	};
+	// 신청 버튼은 그 단계에 cta 문구가 있을 때만 보인다 (진행 중 단계에는 버튼 없음)
+	const applyCta = (el, phase) => {
+		const cta = el.querySelector('.hub-cta');
+		if (!cta) return;
+		cta.hidden = !phase.cta_ko;
+		if (phase.cta_ko) cta.querySelector('.cta-label').textContent = phase.cta_ko;
+	};
 	let shown = 0;
 	group.querySelectorAll('.hub-card[data-phases]').forEach(card => {
 		let phases = [];
@@ -1756,10 +1824,22 @@ document.getElementById('theme-toggle').addEventListener('click', () => {
 		shown += 1;
 		const when = card.querySelector('.hub-when');
 		if (when) when.textContent = phase.ko;
+		applyCta(card, phase);
 	});
 	group.hidden = shown === 0;
 	const chip = document.getElementById('hub-nav-' + group.id.replace('hub-', ''));
 	if (chip) chip.hidden = shown === 0;
+
+	// 히어로 신규 강의 줄: 참조한 카드와 같은 단계로 보이고, 기간이 끝나면 함께 내려간다
+	document.querySelectorAll('[data-phases-ref]').forEach(el => {
+		const src = document.getElementById(el.getAttribute('data-phases-ref'));
+		const phase = src && !src.hidden ? currentPhase(src) : null;
+		el.hidden = !phase;
+		if (!phase) return;
+		const when = el.querySelector('.hub-when-inline');
+		if (when) when.textContent = phase.ko;
+		applyCta(el, phase);
+	});
 })();
 
 // ───── Reveal on scroll ─────

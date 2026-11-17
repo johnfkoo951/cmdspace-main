@@ -7,7 +7,7 @@ description: "Source-of-truth for the Topics and Tools sections of the cmdspace.
 author:
   - "[[구요한]]"
 date created: 2026-04-21
-date modified: 2026-07-10
+date modified: 2026-11-05
 tags:
   - cmdspace
   - landing
@@ -18,6 +18,7 @@ CMDS: "[[📚 806 Webpages]]"
 related:
   - "[[2026-04-21-cmdspace-landing]]"
   - "[[CMDSPACE Brand Identity]]"
+  - "[[00-AX강의-자산-인덱스]]"
 status: inProgress
 ---
 
@@ -31,123 +32,125 @@ status: inProgress
 
 ## 📚 Topics (교육 주제)
 
-주제 카드는 8개. 순서는 중요도·빈도 기준. 각 항목은 `id · title · desc · audience` 4 필드.
+주제 카드는 8개. 순서는 2026년 강의 빈도와 청중 층위 기준. 각 항목은 `id · title · desc · audience` 4 필드. 근거는 [[00-AX강의-자산-인덱스|AX 강의 자산 라이브러리]]와 `50. Assets/54. Lecture Assets/`의 강의별 카드(2026-06~11).
 
-### 01 · 생성형 AI 리터러시
+### 01 · AI 업무 활용 · 프롬프트에서 하네스까지
 
-언어모델 원리부터 프롬프트 엔지니어링, 유료 기능 활용, 실무 자동화까지. ChatGPT · Claude · Gemini 를 목적에 맞게 조합해 쓰는 감각을 기릅니다.
+AI를 잘 쓰는 사람은 묻지 않고 맡기고, 매번 설명하지 않고, 기준을 줍니다. 프롬프트 → 컨텍스트 → 하네스 → 루프 네 층으로 ChatGPT · Claude · Gemini를 실제 업무에 붙이고, 클라우드와 로컬 중 어디에 맡길지 보안 기준까지 함께 정합니다.
 
-- 대상: 일반 실무자 · 임원 · 교사 · 학생 · 학부모
+- 대상: 기업·공공기관 실무자 · 전 직원 교육 · 일반 수강생
 
-### 02 · 연구자용 AI
+### 02 · 임원 AX · AI를 지휘하는 리더의 언어
 
-논문 탐색·읽기·쓰기·인용, AI로 데이터 정제와 분석 자동화, 나만의 연구 보조 GPT 만들기. 연구 프로세스 전 단계를 LLM과 함께 재설계합니다.
+AX는 도구 도입이 아니라 업무 재설계입니다. 에이전트의 다섯 요소(모델·도구·지식·룰·루프), AI 과제를 결재하는 여섯 질문, 위임과 판단 포기의 경계, 거버넌스와 데이터 주권을 임원의 언어로 다루고 1:1 코칭으로 잇습니다.
 
-- 대상: 대학원생 · 교수 · 연구소 · 기관 연구팀
+- 대상: CEO · 임원 · 부문장 · 대기업·금융·공공기관 리더
 
-### 03 · 개인지식관리(PKM) · 세컨드브레인
+### 03 · AI가 읽는 조직 · AI-ready 데이터
 
-티아고 포르테의 BASB, 루만의 제텔카스텐, kepano·닉 마일로의 LYT를 한국 실무 맥락에 맞게 재구성한 CMDS 프로세스. 옵시디언 기초부터 고급 플러그인·그래프 활용까지.
+데이터가 없는 게 아니라 AI가 읽지 못하는 형태로 쌓여 있을 뿐입니다. 보고용(PPT·PDF)·교환용(마크다운·JSON)·원문 세 층과 메타데이터 일곱 칸으로 부서 지식을 정본으로 만들고, NotebookLM 같은 근거형 AI를 기관 문서에 들이는 기준을 세웁니다.
+
+- 대상: DX·AI 조직 · 지식·데이터 담당 · 공공기관 · 임원
+
+### 04 · 연구자의 세컨드 브레인
+
+문헌 수집부터 읽기·인용·집필까지 연구 과정을 AI와 다시 짭니다. Zotero 서재를 에이전트가 함께 읽게 하고, pandoc 인용으로 Word 원고까지 잇고, 연구 데이터 분석과 보고서 작성은 근거를 남겨 검증합니다.
+
+- 대상: 대학원생 · 교수 · 정부출연연구기관 · 병원 연구팀
+
+### 05 · 옵시디언 PKM · 에이전트를 위한 볼트 설계
+
+BASB·제텔카스텐·LYT를 한국 실무에 맞게 재구성한 CMDS 프로세스. 분류 체계, 프로퍼티 스키마, Bases, 위키링크로 개인 지식을 사람과 AI 에이전트가 함께 읽고 쓰는 구조로 만듭니다. Obsidian 101 기초부터 월간 옵시디언 심화까지.
 
 - 대상: 지식노동자 · 연구자 · 학생 · 콘텐츠 크리에이터
 
-### 04 · AI 에이전트·멀티에이전트
+### 06 · LLM Wiki · 쌓일수록 쓸모 있는 지식 베이스
 
-Claude Code · OpenClaw 기반 에이전트 구축, MCP로 외부 도구 연결, Obsidian 볼트를 에이전트의 장기 기억으로 활용. 9Yohan 멀티에이전트 오케스트레이션 사례.
+Karpathy의 LLM Wiki 패턴을 실무로 옮깁니다. 원천 자료를 AI가 위키 카드로 소화하고(Ingest), 묻고(Query), 점검하며(Lint), qmd 인덱스로 수천 개 노트를 찾게 합니다. 모은 수가 아니라 소화한 수로 세는 개인·팀 지식 베이스.
 
-- 대상: 개발자 · Power User · 프로덕트 팀
+- 대상: 연구자 · 지식노동자 · 팀 리더 · 사내 지식관리 담당
 
-### 05 · CEO · 리더십 AX 교육
+### 07 · AI 에이전트 · 내 도구 직접 만들기
 
-그룹 임원·회장단·CEO 대상 AX 교육과 1:1 코칭. AI 시대에 조직과 본인의 의사결정을 어떻게 재설계할 것인가.
+Claude Code · Codex에 일을 맡기고 MCP와 스킬로 도구를 연결합니다. 견적 계산기·업무 앱·웹페이지를 사서 쓰지 않고 직접 만들어 배포하며, 9Yohan 멀티에이전트 운영 사례와 AKM Index로 지식·에이전트 운영 수준을 점검합니다.
 
-- 대상: 사장 · 부사장 · 임원 · 대기업/공공기관 리더
+- 대상: 개발자 · Power User · 반복 업무를 덜어 내려는 실무자
 
-### 06 · 데이터 분석·시각화
+### 08 · 교육자를 위한 AI · 수업과 과정 설계
 
-기초·고급 통계, 회귀·ANOVA·SEM, 머신러닝 지도·비지도학습, 토픽 모델링. Tableau로 패널데이터 스토리텔링, ESG·HR Analytics 실무 사례.
-
-- 대상: 연구자 · HR · 마케팅 · 정책 담당자
-
-### 07 · 교수법·커리큘럼 설계
-
-중고등 · 대학 · 기업 · 공공기관 맞춤 학습 경험 설계. 실습 중심 Day 1~3 워크샵, 시리즈 과정, 장기 코칭 프로그램 기획.
+AI를 쓴 과제를 결과물보다 대화 기록과 구술로 평가하는 법, 기출문제와 교육과정으로 수업을 역설계하는 법까지. 중고등·대학·기업·공공기관 맞춤 실습 워크숍과 코호트 과정을 설계합니다.
 
 - 대상: 교사 · 교수 · 교육 담당자 · L&D 팀
-
-### 08 · 노코드·자동화
-
-n8n 워크플로우로 일상 자동화, Google Sheet + GPT API 연동, 교육·HR·마케팅 자동화 설계. 코드 없이 일하는 방식을 바꾸는 레시피.
-
-- 대상: 실무자 · 교육자 · 기획자
 
 ---
 
 ## 🧰 Tools (다루는 도구·툴)
 
-그룹 → 툴 리스트. 각 툴은 선택적으로 `primary: true` 플래그(`●` 배지) 를 가짐.
+그룹 → 툴 리스트. 각 툴은 선택적으로 `primary: true` 플래그(`●` 배지) 를 가짐. 2026-08 이후 강의·컨설팅 노트에 실제로 등장한 도구만 남겼습니다.
 
-### LLM · AI Agent
+### AI 모델 · 에이전트
 
-> 대화·추론·에이전트
+> 대화·추론·에이전트 실행
 
-- ChatGPT **●**
 - Claude **●**
 - Claude Code **●**
-- Claude Agent SDK
+- Codex **●**
+- ChatGPT **●**
 - Gemini
-- OpenClaw **●**
-- Perplexity
-- Hermes
-- MCP
+- Grok
+- Microsoft 365 Copilot
+- Google AI Studio
+- Antigravity
+- OpenClaw
+- MCP **●**
+- Agent Skills
 
-### Personal Knowledge Management
+### 지식 베이스 · PKM
 
-> 메모·연결·저장
+> 기록·연결·AI가 읽는 정본
 
 - Obsidian **●**
+- Obsidian Bases **●**
+- qmd **●**
+- Obsidian Web Clipper
+- Hookmark
+- Mermaid
 - Notion
-- DevonThink
-- Excalidraw
-- Zotero
-- Bookends
 
-### 연구·학습
+### 연구 · 문헌
 
-> 논문·문헌·분석
+> 수집·인용·집필·분석
 
-- Elicit
-- SciSpace
-- ResearchRabbit
+- Zotero **●**
+- Better BibTeX
+- pandoc
+- NotebookLM (Gemini Notebook)
 - Semantic Scholar
-- Publish or Perish
+- OpenAlex
 - Python / Colab
-- R
-- Tableau
 
-### 이미지 · 음성 · 영상 AI
+### 음성 · 영상 · 이미지
 
-> 멀티모달 생성
+> 기록·생성·라이브러리
 
-- Midjourney
-- Stable Diffusion
-- DALL-E
-- Sora
 - ElevenLabs **●**
 - HeyGen
-- Whisper
+- Plaud
+- Midjourney
+- Suno
+- Eagle
 
-### 자동화 · 개발
+### 개발 · 배포 · 운영
 
-> 워크플로 · 퍼블리시
+> 내 도구를 만들고 내보내기
 
-- n8n **●**
-- Make.com
-- Cursor
 - Vercel **●**
+- GitHub **●**
 - Cloudflare
-- Webflow
-- Raycast
+- Supabase
+- Tailscale
+- cmux
+- OpenRig
 
 ---
 
@@ -180,9 +183,14 @@ n8n 워크플로우로 일상 자동화, Google Sheet + GPT API 연동, 교육·
 
 이 패턴을 유지하는 한 스킬이 깔끔하게 파싱합니다. 문서 구조를 크게 바꾸면 `~/.claude/skills/cmdspace-update/scripts/sync-topics-tools.py` 도 업데이트 필요.
 
+## 🗓 갱신 기록
+
+- 2026-11-05: 2026년 강의 자산 기준으로 주제 8개와 도구 5그룹을 다시 씀. 주제는 하네스(01)·임원 지시언어(02)·AI-ready 데이터(03)·연구자 세컨드 브레인(04)·볼트 설계(05)·LLM Wiki(06)·에이전트로 내 도구 만들기(07)·교육자용 AI(08)로 재편하고, 옛 「데이터 분석·시각화」는 04에, 「노코드·자동화(n8n)」는 07에 흡수. 도구는 2026-08 이후 강의·컨설팅 노트에 실제로 나온 것만 남김(n8n·Make.com·Tableau·Sora·DALL-E·Stable Diffusion·Webflow·Raycast·Cursor·Hermes 등 제외, Codex·qmd·Bases·Zotero·pandoc·NotebookLM 등 추가). 파서가 섹션 구분선 `---`을 마지막 주제 설명에 붙이던 문제도 함께 고침.
+
 ## 🔗 Related
 
 - [[2026-04-21-cmdspace-landing]] — 랜딩 프로젝트 트래킹 노트
 - [[CMDSPACE Brand Identity]] — 브랜드 포지셔닝 (Hero/Pillars 카피 근거)
 - [[🔖 YHN's Curriculum]] — Topics 상세 커리큘럼
 - [[🔖 YHN's Lectures]] — 개별 강의 참조
+- [[00-AX강의-자산-인덱스]] — 주제 카드의 근거가 된 강의 자산 라이브러리
